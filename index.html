@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Adeline Palmerston - Personal Portfolio</title>
+		<title>Zahra Firdianti Zeny - Personal Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +19,7 @@
 				margin: 0;
 				padding: 0;
 			}
-			/* Background Overlay mimicking HTML5 UP Dimension */
+			
 			#bg {
 				content: '';
 				display: block;
@@ -29,7 +29,7 @@
 				width: 100vw;
 				height: 100vh;
 				z-index: -1;
-				background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop');
+				background-image:  <img src="images/pict02.jpg" alt="">
 				background-position: center;
 				background-size: cover;
 				background-repeat: no-repeat;
@@ -45,7 +45,7 @@
 				background-color: rgba(27, 31, 34, 0.85);
 			}
 
-			/* Wrapper layout */
+			/* Wrapper layout *
 			#wrapper {
 				display: flex;
 				flex-direction: column;
@@ -183,10 +183,10 @@
 							<div class="flex justify-between items-center mb-10 border-b border-white/10 pb-4">
 								<span class="text-xs tracking-widest uppercase font-semibold text-gray-400">Personal Portfolio</span>
 								<nav class="hidden xl:flex space-x-4 text-xs uppercase tracking-wider font-semibold">
+									<a href="#about-section" class="nav-link hover:text-gray-300 transition">About</a>
 									<a href="#skill-section" class="nav-link hover:text-gray-300 transition">Skill</a>
 									<a href="#work-section" class="nav-link hover:text-gray-300 transition">Work</a>
 									<a href="#project-section" class="nav-link hover:text-gray-300 transition">Project</a>
-									<a href="#sertifikat-section" class="nav-link hover:text-gray-300 transition">Sertifikat</a>
 									<a href="#contact-section" class="nav-link hover:text-gray-300 transition">Contact</a>
 								</nav>
 								<!-- Mobile menu trigger toggle -->
@@ -214,13 +214,13 @@
 
 						<!-- Hidden navigation list for mobile popup or secondary links -->
 						<div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-3 items-center text-xs text-gray-400 xl:hidden">
+							<a href="#about-section" class="nav-link hover:text-white">About</a>
+							<span>•</span>
 							<a href="#skill-section" class="nav-link hover:text-white">Skill</a>
 							<span>•</span>
 							<a href="#work-section" class="nav-link hover:text-white">Work</a>
 							<span>•</span>
 							<a href="#project-section" class="nav-link hover:text-white">Project</a>
-							<span>•</span>
-							<a href="#sertifikat-section" class="nav-link hover:text-white">Sertifikat</a>
 							<span>•</span>
 							<a href="#contact-section" class="nav-link hover:text-white">Contact</a>
 						</div>
@@ -229,6 +229,28 @@
 			</header>
 
 			<div id="main" class="w-full flex flex-col items-center">
+
+				<!-- ABOUT SECTION -->
+				<article id="about-section" class="panel">
+					<div class="close-btn" onclick="closePanels()">
+						<i class="fa-solid fa-xmark text-white"></i>
+					</div>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">About Me</h2>
+					<div class="flex flex-col md:flex-row gap-6 items-center">
+						<div class="w-full md:w-1/3">
+							<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Profile" class="w-full h-64 object-cover rounded border border-white/20">
+						</div>
+						<div class="w-full md:w-2/3 space-y-4">
+							<h3 class="text-xl font-bold text-white">Adeline Palmerston</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								Halo! Saya adalah seorang profesional yang berfokus pada UI/UX Design, riset pengguna, serta pengelolaan dan analisis basis data relasional (SQL & Python). 
+							</p>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								Dengan latar belakang yang memadukan estetika visual digital kreatif menggunakan Figma dan Photoshop serta kemampuan teknis data yang kuat, saya berkomitmen untuk menghadirkan solusi digital yang fungsional, intuitif, dan berdampak tinggi.
+							</p>
+						</div>
+					</div>
+				</article>
 
 				<!-- SKILL SECTION -->
 				<article id="skill-section" class="panel">
@@ -381,14 +403,14 @@
 					</div>
 				</article>
 
-				<!-- PROJECT SECTION (Showcase Proyek Pilihan: 2 Figma & 2 Photoshop) -->
+				<!-- PROJECT SECTION (Showcase Proyek Pilihan & Bukti Kompetensi: 2 Figma, 2 Photoshop & 6 Sertifikat) -->
 				<article id="project-section" class="panel">
 					<div class="close-btn" onclick="closePanels()">
 						<i class="fa-solid fa-xmark text-white"></i>
 					</div>
-					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Showcase Project</h2>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Showcase & Kompetensi</h2>
 					<p class="text-gray-300 text-sm mb-8 leading-relaxed">
-						Koleksi showcase proyek pilihan yang dikurasi khusus, terbagi menjadi tipe Figma Design dan Photoshop Visual Creation.
+						Koleksi showcase proyek pilihan yang dikurasi khusus (Figma & Photoshop) serta bukti dokumentasi sertifikasi profesional.
 					</p>
 
 					<!-- Figma Projects (2 photos) -->
@@ -415,7 +437,7 @@
 					</div>
 
 					<!-- Photoshop Projects (2 photos) -->
-					<div>
+					<div class="mb-8">
 						<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
 							<i class="fa-solid fa-image text-gray-400"></i> Photoshop Projects (2 Projects)
 						</h3>
@@ -436,59 +458,48 @@
 							</div>
 						</div>
 					</div>
-				</article>
 
-				<!-- SERTIFIKAT SECTION (Bukti Kompetensi, Sertifikasi & Pelatihan: 6 foto) -->
-				<article id="sertifikat-section" class="panel">
-					<div class="close-btn" onclick="closePanels()">
-						<i class="fa-solid fa-xmark text-white"></i>
-					</div>
-					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Sertifikat & Kompetensi</h2>
-					<p class="text-gray-300 text-sm mb-6 leading-relaxed">
-						Dokumentasi sertifikat resmi dan pelatihan profesional yang telah diselesaikan untuk mendukung kapabilitas bidang teknologi dan desain.
-					</p>
-
-					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-						<!-- Cert 1 -->
-						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
-							<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop" alt="Cert 1" class="w-full h-32 object-cover rounded mb-2">
-							<h3 class="font-bold text-xs text-white">Google UX Design Prof. Certificate</h3>
-							<span class="text-[10px] text-gray-400">Issued: 2024</span>
-						</div>
-						<!-- Cert 2 -->
-						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
-							<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop" alt="Cert 2" class="w-full h-32 object-cover rounded mb-2">
-							<h3 class="font-bold text-xs text-white">Advanced Database & SQL Expert</h3>
-							<span class="text-[10px] text-gray-400">Issued: 2023</span>
-						</div>
-						<!-- Cert 3 -->
-						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
-							<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop" alt="Cert 3" class="w-full h-32 object-cover rounded mb-2">
-							<h3 class="font-bold text-xs text-white">UI/UX Research & Usability Testing</h3>
-							<span class="text-[10px] text-gray-400">Issued: 2023</span>
-						</div>
-						<!-- Cert 4 -->
-						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
-							<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop" alt="Cert 4" class="w-full h-32 object-cover rounded mb-2">
-							<h3 class="font-bold text-xs text-white">Professional Photoshop Mastery</h3>
-							<span class="text-[10px] text-gray-400">Issued: 2022</span>
-						</div>
-						<!-- Cert 5 -->
-						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
-							<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400&auto=format&fit=crop" alt="Cert 5" class="w-full h-32 object-cover rounded mb-2">
-							<h3 class="font-bold text-xs text-white">Data Analytics & Visualization</h3>
-							<span class="text-[10px] text-gray-400">Issued: 2022</span>
-						</div>
-						<!-- Cert 6 -->
-						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
-							<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop" alt="Cert 6" class="w-full h-32 object-cover rounded mb-2">
-							<h3 class="font-bold text-xs text-white">Agile Project Management</h3>
-							<span class="text-[10px] text-gray-400">Issued: 2021</span>
+					<!-- Sertifikat Section (6 photos) -->
+					<div>
+						<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+							<i class="fa-solid fa-certificate text-gray-400"></i> Sertifikat & Pelatihan (6 Sertifikat)
+						</h3>
+						<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+							<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+								<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop" alt="Cert 1" class="w-full h-32 object-cover rounded mb-2">
+								<h3 class="font-bold text-xs text-white">Google UX Design Prof. Certificate</h3>
+								<span class="text-[10px] text-gray-400">Issued: 2024</span>
+							</div>
+							<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+								<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop" alt="Cert 2" class="w-full h-32 object-cover rounded mb-2">
+								<h3 class="font-bold text-xs text-white">Advanced Database & SQL Expert</h3>
+								<span class="text-[10px] text-gray-400">Issued: 2023</span>
+							</div>
+							<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+								<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop" alt="Cert 3" class="w-full h-32 object-cover rounded mb-2">
+								<h3 class="font-bold text-xs text-white">UI/UX Research & Usability Testing</h3>
+								<span class="text-[10px] text-gray-400">Issued: 2023</span>
+							</div>
+							<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+								<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop" alt="Cert 4" class="w-full h-32 object-cover rounded mb-2">
+								<h3 class="font-bold text-xs text-white">Professional Photoshop Mastery</h3>
+								<span class="text-[10px] text-gray-400">Issued: 2022</span>
+							</div>
+							<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+								<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400&auto=format&fit=crop" alt="Cert 5" class="w-full h-32 object-cover rounded mb-2">
+								<h3 class="font-bold text-xs text-white">Data Analytics & Visualization</h3>
+								<span class="text-[10px] text-gray-400">Issued: 2022</span>
+							</div>
+							<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+								<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop" alt="Cert 6" class="w-full h-32 object-cover rounded mb-2">
+								<h3 class="font-bold text-xs text-white">Agile Project Management</h3>
+								<span class="text-[10px] text-gray-400">Issued: 2021</span>
+							</div>
 						</div>
 					</div>
 				</article>
 
-				<!-- CONTACT SECTION (Identical to original HTML5 UP Dimension template) -->
+				<!-- CONTACT SECTION -->
 				<article id="contact-section" class="panel">
 					<div class="close-btn" onclick="closePanels()">
 						<i class="fa-solid fa-xmark text-white"></i>
@@ -526,13 +537,6 @@
 
 			</div>
 
-			<!-- Footer -->
-			<footer id="footer" class="text-center text-xs text-gray-400 mt-auto">
-				<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net" class="underline hover:text-white">HTML5 UP</a>.</p>
-			</footer>
-
-		</div>
-
 		<!-- Custom Message Modal (Replacing alert) -->
 		<div id="message-box" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
 			<div class="bg-[#1b1f22] border border-white/20 p-6 rounded max-w-sm w-full text-center shadow-2xl">
@@ -542,7 +546,6 @@
 		</div>
 
 		<script>
-			// Navigation switcher logic mimicking HTML5 UP Dimension
 			const navLinks = document.querySelectorAll('.nav-link');
 			const header = document.getElementById('header');
 			const panels = document.querySelectorAll('.panel');
