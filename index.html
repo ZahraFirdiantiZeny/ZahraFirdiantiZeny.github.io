@@ -1,452 +1,597 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zahra Firdianti Zeny — Portfolio</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+<html lang="en">
+	<head>
+		<title>Adeline Palmerston - Personal Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+		<style>
+			* {
+				font-family: 'Source Sans Pro', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+				box-sizing: border-box;
+			}
+			body {
+				background-color: #1b1f22;
+				color: #ffffff;
+				overflow-x: hidden;
+				margin: 0;
+				padding: 0;
+			}
+			/* Background Overlay mimicking HTML5 UP Dimension */
+			#bg {
+				content: '';
+				display: block;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				z-index: -1;
+				background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop');
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			#bg::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(27, 31, 34, 0.85);
+			}
 
-  :root {
-    --dark: #161616;
-    --light: #ffffff;
-    --purple: #7c4dff;
-    --grey: #8a8a8a;
-  }
+			/* Wrapper layout */
+			#wrapper {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				min-height: 100vh;
+				position: relative;
+				padding: 4rem 2rem;
+				z-index: 1;
+			}
 
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: var(--dark);
-    color: #fff;
-  }
+			/* Header Card Container */
+			#header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				max-width: 65rem;
+				width: 100%;
+				background-color: rgba(27, 31, 34, 0.92);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				border-radius: 4px;
+				box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+				transition: transform 0.5s ease, opacity 0.5s ease;
+				margin-bottom: 2rem;
+			}
 
-  /* ===================== NAVBAR ===================== */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 48px;
-    background: rgba(22,22,22,0.95);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
+			/* Main content article overlays */
+			.panel {
+				display: none;
+				max-width: 50rem;
+				width: 100%;
+				background-color: rgba(27, 31, 34, 0.95);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				border-radius: 4px;
+				padding: 3rem;
+				margin-bottom: 2rem;
+				box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+				position: relative;
+				animation: fadeIn 0.5s ease forwards;
+			}
+			.panel.active {
+				display: block;
+			}
 
-  nav .logo {
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-  }
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateY(20px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
 
-  nav ul {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-    align-items: center;
-  }
+			.close-btn {
+				position: absolute;
+				top: 1.5rem;
+				right: 1.5rem;
+				width: 2.5rem;
+				height: 2.5rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: rgba(255, 255, 255, 0.07);
+				border-radius: 50%;
+				cursor: pointer;
+				transition: background 0.3s;
+			}
+			.close-btn:hover {
+				background: rgba(255, 255, 255, 0.2);
+			}
 
-  nav ul a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    transition: color .2s;
-  }
+			/* Custom form controls matching HTML5 UP Dimension */
+			input[type="text"], input[type="email"], textarea {
+				background: rgba(255, 255, 255, 0.075);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				border-radius: 4px;
+				color: #ffffff;
+				padding: 0.75rem 1rem;
+				width: 100%;
+				outline: none;
+				transition: border-color 0.2s, background-color 0.2s;
+			}
+			input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+				border-color: #ffffff;
+				background: rgba(255, 255, 255, 0.1);
+			}
+			.button {
+				display: inline-block;
+				background-color: transparent;
+				border: 1px solid #ffffff;
+				color: #ffffff;
+				border-radius: 4px;
+				padding: 0.75rem 2rem;
+				text-align: center;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				font-size: 0.8rem;
+				transition: background-color 0.2s, color 0.2s;
+				cursor: pointer;
+				text-decoration: none;
+			}
+			.button.primary {
+				background-color: #ffffff;
+				color: #1b1f22;
+			}
+			.button:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+				color: #ffffff;
+			}
+			.button.primary:hover {
+				background-color: rgba(255, 255, 255, 0.9);
+				color: #1b1f22;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-  nav ul a:hover { color: var(--purple); }
+		<div id="bg"></div>
 
-  nav .burger { display: none; }
+		<div id="wrapper">
 
-  /* ===================== SLIDE UMUM ===================== */
-  .slide {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    scroll-margin-top: 0;
-  }
+			<!-- Header / Home Split Layout -->
+			<header id="header">
+				<div class="flex flex-col lg:flex-row w-full items-stretch">
+					<!-- Left Image Side -->
+					<div class="lg:w-1/2 w-full relative min-h-[350px] lg:min-h-[480px]">
+						<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" 
+						     alt="Adeline Palmerston" 
+						     class="w-full h-full object-cover lg:rounded-l-sm" />
+						<div class="absolute top-4 left-4 bg-black/60 px-3 py-1 rounded text-xs font-semibold tracking-wider text-white">
+							Adeline Palmerston
+						</div>
+					</div>
 
-  /* ===================== SLIDE 1 : HERO ===================== */
-  #hero {
-    flex-direction: row;
-    padding-top: 60px;
-  }
+					<!-- Right Content Side -->
+					<div class="lg:w-1/2 w-full p-8 lg:p-12 flex flex-col justify-between">
+						<div>
+							<div class="flex justify-between items-center mb-10 border-b border-white/10 pb-4">
+								<span class="text-xs tracking-widest uppercase font-semibold text-gray-400">Personal Portfolio</span>
+								<nav class="hidden xl:flex space-x-4 text-xs uppercase tracking-wider font-semibold">
+									<a href="#skill-section" class="nav-link hover:text-gray-300 transition">Skill</a>
+									<a href="#work-section" class="nav-link hover:text-gray-300 transition">Work</a>
+									<a href="#project-section" class="nav-link hover:text-gray-300 transition">Project</a>
+									<a href="#sertifikat-section" class="nav-link hover:text-gray-300 transition">Sertifikat</a>
+									<a href="#contact-section" class="nav-link hover:text-gray-300 transition">Contact</a>
+								</nav>
+								<!-- Mobile menu trigger toggle -->
+								<button id="mobile-menu-btn" class="xl:hidden text-white focus:outline-none">
+									<i class="fa-solid fa-bars text-xl"></i>
+								</button>
+							</div>
 
-  .hero-img {
-    flex: 1.1;
-    min-width: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
+							<h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-white">
+								My <span class="block border-t border-white/20 pt-2 mt-2 w-3/4">Portfolio</span>
+							</h1>
+							<p class="text-gray-300 text-sm leading-relaxed mb-8">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+							</p>
 
-  .hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-    filter: grayscale(100%);
-    display: block;
-  }
+							<div class="flex flex-wrap gap-4 items-center">
+								<a href="#project-section" class="nav-link button primary flex items-center gap-2">
+									Lihat My Project
+								</a>
+								<a href="#contact-section" class="nav-link button flex items-center gap-2">
+									<i class="fa-solid fa-envelope text-xs"></i> Contact
+								</a>
+							</div>
+						</div>
 
-  .hero-text {
-    flex: 1;
-    padding: 80px 72px 80px 64px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+						<!-- Hidden navigation list for mobile popup or secondary links -->
+						<div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-3 items-center text-xs text-gray-400 xl:hidden">
+							<a href="#skill-section" class="nav-link hover:text-white">Skill</a>
+							<span>•</span>
+							<a href="#work-section" class="nav-link hover:text-white">Work</a>
+							<span>•</span>
+							<a href="#project-section" class="nav-link hover:text-white">Project</a>
+							<span>•</span>
+							<a href="#sertifikat-section" class="nav-link hover:text-white">Sertifikat</a>
+							<span>•</span>
+							<a href="#contact-section" class="nav-link hover:text-white">Contact</a>
+						</div>
+					</div>
+				</div>
+			</header>
 
-  .hero-text .line {
-    width: calc(100% - 140px);
-    margin-left: auto;
-   height: 2px;
-    background: #fff;
-    margin-bottom: 28px;
-  }
+			<div id="main" class="w-full flex flex-col items-center">
 
-  .hero-text h1 {
-    font-size: clamp(48px, 6.5vw, 88px);
-    font-weight: 800;
-    line-height: 1.02;
-    letter-spacing: -2px;
-    margin-bottom: 28px;
-  }
+				<!-- SKILL SECTION -->
+				<article id="skill-section" class="panel">
+					<div class="close-btn" onclick="closePanels()">
+						<i class="fa-solid fa-xmark text-white"></i>
+					</div>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Skill & Expertise</h2>
+					<p class="text-gray-300 text-sm mb-8 leading-relaxed">
+						Keahlian dan skillset yang saling melengkapi antara kemampuan teknis data & database serta keahlian desain kreatif digital.
+					</p>
 
-  .hero-text p {
-    font-size: 13.5px;
-    line-height: 1.8;
-    color: #cfcfcf;
-    max-width: 440px;
-    margin-bottom: 36px;
-  }
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<!-- Tech Skills: Data & Database -->
+						<div class="bg-black/40 p-6 rounded border border-white/10">
+							<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+								<i class="fa-solid fa-database text-gray-400"></i> Tech Skills (Data & Database)
+							</h3>
+							
+							<div class="space-y-4">
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>SQL & Relational Databases</span>
+										<span>90%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 90%;"></div>
+									</div>
+								</div>
 
-  .hero-btns { display: flex; gap: 20px; align-items: center; }
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>Data Analysis & Python</span>
+										<span>85%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 85%;"></div>
+									</div>
+								</div>
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 26px;
-    font-size: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: all .2s;
-  }
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>Database Administration & Tuning</span>
+										<span>80%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 80%;"></div>
+									</div>
+								</div>
 
-  .btn-solid {
-    background: #fff;
-    color: #111;
-  }
-  .btn-solid:hover { background: var(--purple); color: #fff; }
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>Data Visualization (Tableau/PowerBI)</span>
+										<span>88%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 88%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-  .btn-outline {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-  }
-  .btn-outline:hover { border-color: var(--purple); color: var(--purple); }
+						<!-- Design Skills: UI/UX, Research, UX Writing, Photoshop -->
+						<div class="bg-black/40 p-6 rounded border border-white/10">
+							<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+								<i class="fa-solid fa-pen-nib text-gray-400"></i> Design Skills (UI/UX & Creative)
+							</h3>
 
-  .btn-outline .circle {
-    width: 26px; height: 26px;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-  }
+							<div class="space-y-4">
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>Figma (UI/UX Design & Prototyping)</span>
+										<span>95%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 95%;"></div>
+									</div>
+								</div>
 
-  /* ===================== SLIDE PUTIH (gaya Canva) ===================== */
-  .white-slide {
-    background: var(--light);
-    color: #111;
-    border: 6px solid var(--purple);
-    margin: 40px;
-    padding: 56px 64px 96px;
-  }
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>UI/UX Research & User Testing</span>
+										<span>90%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 90%;"></div>
+									</div>
+								</div>
 
-  .slide-topbar {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 44px;
-  }
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>UX Writing & Microcopy</span>
+										<span>85%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 85%;"></div>
+									</div>
+								</div>
 
-  .white-slide h2 {
-    font-size: clamp(40px, 5vw, 64px);
-    font-weight: 800;
-    letter-spacing: -2px;
-    line-height: 1;
-    margin-bottom: 28px;
-  }
+								<div>
+									<div class="flex justify-between text-xs font-semibold mb-1">
+										<span>Adobe Photoshop (Visual Editing)</span>
+										<span>92%</span>
+									</div>
+									<div class="w-full bg-white/10 h-2 rounded overflow-hidden">
+										<div class="bg-white h-full rounded" style="width: 92%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
 
-  .white-slide p {
-    font-size: 13.5px;
-    line-height: 1.8;
-    color: #333;
-    max-width: 460px;
-    margin-bottom: 18px;
-  }
+				<!-- WORK SECTION -->
+				<article id="work-section" class="panel">
+					<div class="close-btn" onclick="closePanels()">
+						<i class="fa-solid fa-xmark text-white"></i>
+					</div>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Work Experience</h2>
+					<p class="text-gray-300 text-sm mb-8 leading-relaxed">
+						Rekam jejak pengalaman profesional dalam industri kreatif, desain produk, dan manajemen sistem database.
+					</p>
 
-  .slide-footer {
-    position: absolute;
-    left: 64px; right: 64px; bottom: 44px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    font-weight: 700;
-  }
+					<div class="space-y-6">
+						<div class="bg-black/40 p-6 rounded border border-white/10 relative pl-8 border-l-4 border-l-white">
+							<span class="text-xs text-gray-400 font-mono">2022 - Present</span>
+							<h3 class="text-xl font-bold text-white mt-1">Lead UI/UX Designer & Data Specialist</h3>
+							<h4 class="text-sm text-gray-300 mb-3">Timmerman Industries</h4>
+							<p class="text-sm text-gray-400 leading-relaxed">
+								Bertanggung jawab penuh atas perancangan desain sistem aplikasi enterprise, riset pengguna secara mendalam, serta optimalisasi struktur database relasional perusahaan untuk performa analitik yang lebih cepat.
+							</p>
+						</div>
 
-  .slide-footer a { color: #111; text-decoration: none; }
-  .slide-footer a:hover { color: var(--purple); }
+						<div class="bg-black/40 p-6 rounded border border-white/10 relative pl-8 border-l-4 border-l-white/60">
+							<span class="text-xs text-gray-400 font-mono">2020 - 2022</span>
+							<h3 class="text-xl font-bold text-white mt-1">UI/UX Researcher & Visual Creator</h3>
+							<h4 class="text-sm text-gray-300 mb-3">Ginyard International Co.</h4>
+							<p class="text-sm text-gray-400 leading-relaxed">
+								Melakukan usability testing, menyusun wireframes & high-fidelity prototypes menggunakan Figma, serta menghasilkan aset visual promosi digital berkualitas tinggi menggunakan Adobe Photoshop.
+							</p>
+						</div>
 
-  .two-col {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-  }
-  .two-col > div { flex: 1; min-width: 0; }
+						<div class="bg-black/40 p-6 rounded border border-white/10 relative pl-8 border-l-4 border-l-white/30">
+							<span class="text-xs text-gray-400 font-mono">2018 - 2020</span>
+							<h3 class="text-xl font-bold text-white mt-1">Junior Database Administrator</h3>
+							<h4 class="text-sm text-gray-300 mb-3">Aldenaire & Partners</h4>
+							<p class="text-sm text-gray-400 leading-relaxed">
+								Mengelola pencatatan data klien, memelihara integritas database SQL, serta membuat laporan analitik berkala untuk mendukung tim manajemen produk.
+							</p>
+						</div>
+					</div>
+				</article>
 
-  .white-slide .photo-frame {
-    position: relative;
-  }
-  .white-slide .photo-frame::before {
-    content: "";
-    position: absolute;
-    top: -24px; left: -24px;
-    width: 90px; height: 56px;
-    background: #111;
-  }
-  .white-slide .photo-frame img {
-    display: block;
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    object-position: center 20%;
-    position: relative;
-  }
+				<!-- PROJECT SECTION (Showcase Proyek Pilihan: 2 Figma & 2 Photoshop) -->
+				<article id="project-section" class="panel">
+					<div class="close-btn" onclick="closePanels()">
+						<i class="fa-solid fa-xmark text-white"></i>
+					</div>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Showcase Project</h2>
+					<p class="text-gray-300 text-sm mb-8 leading-relaxed">
+						Koleksi showcase proyek pilihan yang dikurasi khusus, terbagi menjadi tipe Figma Design dan Photoshop Visual Creation.
+					</p>
 
-  /* ===================== ABOUT ME ===================== */
-  .fact-row {
-    display: flex;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid #e5e5e5;
-    font-size: 13px;
-  }
-  .fact-row b { min-width: 120px; color: #111; }
-  .fact-row span { color: #444; }
+					<!-- Figma Projects (2 photos) -->
+					<div class="mb-8">
+						<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+							<i class="fa-brands fa-figma text-gray-400"></i> Figma Projects (2 Projects)
+						</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							<div class="bg-black/40 rounded border border-white/10 overflow-hidden group">
+								<img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=600&auto=format&fit=crop" alt="Figma Project 1" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+								<div class="p-4">
+									<h4 class="font-bold text-white mb-1">E-Commerce Mobile UX/UI</h4>
+									<p class="text-xs text-gray-400">Design System, Wireframing & Interactive Prototype in Figma.</p>
+								</div>
+							</div>
+							<div class="bg-black/40 rounded border border-white/10 overflow-hidden group">
+								<img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" alt="Figma Project 2" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+								<div class="p-4">
+									<h4 class="font-bold text-white mb-1">Fintech Dashboard UI</h4>
+									<p class="text-xs text-gray-400">User Research, Information Architecture & High-Fidelity UI.</p>
+								</div>
+							</div>
+						</div>
+					</div>
 
-  .chip-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
-  .chip {
-    border: 1.5px solid #111;
-    padding: 6px 14px;
-    font-size: 11px;
-    font-weight: 700;
-  }
+					<!-- Photoshop Projects (2 photos) -->
+					<div>
+						<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+							<i class="fa-solid fa-image text-gray-400"></i> Photoshop Projects (2 Projects)
+						</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							<div class="bg-black/40 rounded border border-white/10 overflow-hidden group">
+								<img src="https://images.unsplash.com/photo-1542744094-3a31246263d0?q=80&w=600&auto=format&fit=crop" alt="Photoshop Project 1" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+								<div class="p-4">
+									<h4 class="font-bold text-white mb-1">Brand Identity Key Visual</h4>
+									<p class="text-xs text-gray-400">Advanced Digital Manipulation, Color Grading & Compositing.</p>
+								</div>
+							</div>
+							<div class="bg-black/40 rounded border border-white/10 overflow-hidden group">
+								<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" alt="Photoshop Project 2" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+								<div class="p-4">
+									<h4 class="font-bold text-white mb-1">Editorial Magazine Spread</h4>
+									<p class="text-xs text-gray-400">Typography Integration, Photo Retouching & Vector Assets.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
 
-  /* ===================== NAVIGASI PPT ===================== */
-  .ppt-nav {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: rgba(22,22,22,0.92);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 10px 18px;
-    border-radius: 40px;
-  }
-  .ppt-nav button {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    border: 1.5px solid #fff;
-    background: transparent;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all .2s;
-  }
-  .ppt-nav button:hover { background: var(--purple); border-color: var(--purple); }
-  .ppt-nav button:disabled { opacity: 0.25; cursor: default; }
-  .ppt-nav button:disabled:hover { background: transparent; border-color: #fff; }
-  .ppt-counter { font-size: 12px; font-weight: 700; color: #fff; min-width: 42px; text-align: center; }
+				<!-- SERTIFIKAT SECTION (Bukti Kompetensi, Sertifikasi & Pelatihan: 6 foto) -->
+				<article id="sertifikat-section" class="panel">
+					<div class="close-btn" onclick="closePanels()">
+						<i class="fa-solid fa-xmark text-white"></i>
+					</div>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Sertifikat & Kompetensi</h2>
+					<p class="text-gray-300 text-sm mb-6 leading-relaxed">
+						Dokumentasi sertifikat resmi dan pelatihan profesional yang telah diselesaikan untuk mendukung kapabilitas bidang teknologi dan desain.
+					</p>
 
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 860px) {
-    nav { padding: 16px 20px; }
-    nav ul { display: none; }
-    nav .burger { display: block; color:#fff; font-size:20px; background:none; border:none; cursor:pointer; }
+					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+						<!-- Cert 1 -->
+						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+							<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop" alt="Cert 1" class="w-full h-32 object-cover rounded mb-2">
+							<h3 class="font-bold text-xs text-white">Google UX Design Prof. Certificate</h3>
+							<span class="text-[10px] text-gray-400">Issued: 2024</span>
+						</div>
+						<!-- Cert 2 -->
+						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+							<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop" alt="Cert 2" class="w-full h-32 object-cover rounded mb-2">
+							<h3 class="font-bold text-xs text-white">Advanced Database & SQL Expert</h3>
+							<span class="text-[10px] text-gray-400">Issued: 2023</span>
+						</div>
+						<!-- Cert 3 -->
+						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+							<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop" alt="Cert 3" class="w-full h-32 object-cover rounded mb-2">
+							<h3 class="font-bold text-xs text-white">UI/UX Research & Usability Testing</h3>
+							<span class="text-[10px] text-gray-400">Issued: 2023</span>
+						</div>
+						<!-- Cert 4 -->
+						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+							<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop" alt="Cert 4" class="w-full h-32 object-cover rounded mb-2">
+							<h3 class="font-bold text-xs text-white">Professional Photoshop Mastery</h3>
+							<span class="text-[10px] text-gray-400">Issued: 2022</span>
+						</div>
+						<!-- Cert 5 -->
+						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+							<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400&auto=format&fit=crop" alt="Cert 5" class="w-full h-32 object-cover rounded mb-2">
+							<h3 class="font-bold text-xs text-white">Data Analytics & Visualization</h3>
+							<span class="text-[10px] text-gray-400">Issued: 2022</span>
+						</div>
+						<!-- Cert 6 -->
+						<div class="bg-black/50 p-3 rounded border border-white/10 text-center">
+							<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop" alt="Cert 6" class="w-full h-32 object-cover rounded mb-2">
+							<h3 class="font-bold text-xs text-white">Agile Project Management</h3>
+							<span class="text-[10px] text-gray-400">Issued: 2021</span>
+						</div>
+					</div>
+				</article>
 
-    #hero { flex-direction: column; padding-top: 60px; }
-    .hero-img { width: 100%; height: 45vh; flex: none; }
-    .hero-text { padding: 40px 24px 80px; }
+				<!-- CONTACT SECTION (Identical to original HTML5 UP Dimension template) -->
+				<article id="contact-section" class="panel">
+					<div class="close-btn" onclick="closePanels()">
+						<i class="fa-solid fa-xmark text-white"></i>
+					</div>
+					<h2 class="text-3xl font-bold tracking-wider mb-6 pb-2 border-b border-white/20 uppercase">Contact</h2>
+					<form method="post" action="#" onsubmit="event.preventDefault(); showMessageBox('Thank you! Your message has been sent successfully.');">
+						<div class="space-y-4 mb-6">
+							<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+								<div class="flex flex-col">
+									<label for="name" class="text-xs uppercase tracking-wider text-gray-300 mb-1">Name</label>
+									<input type="text" name="name" id="name" required />
+								</div>
+								<div class="flex flex-col">
+									<label for="email" class="text-xs uppercase tracking-wider text-gray-300 mb-1">Email</label>
+									<input type="email" name="email" id="email" required />
+								</div>
+							</div>
+							<div class="flex flex-col">
+								<label for="message" class="text-xs uppercase tracking-wider text-gray-300 mb-1">Message</label>
+								<textarea name="message" id="message" rows="4" required></textarea>
+							</div>
+						</div>
+						<ul class="flex flex-wrap gap-4 items-center list-none p-0 m-0 mb-6">
+							<li><input type="submit" value="Send Message" class="button primary" /></li>
+							<li><input type="reset" value="Reset" class="button" /></li>
+						</ul>
+					</form>
+					<ul class="flex space-x-6 list-none p-0 m-0 text-xl text-gray-300">
+						<li><a href="#" class="hover:text-white transition"><span class="fa-brands fa-twitter"></span><span class="sr-only">Twitter</span></a></li>
+						<li><a href="#" class="hover:text-white transition"><span class="fa-brands fa-facebook-f"></span><span class="sr-only">Facebook</span></a></li>
+						<li><a href="#" class="hover:text-white transition"><span class="fa-brands fa-instagram"></span><span class="sr-only">Instagram</span></a></li>
+						<li><a href="#" class="hover:text-white transition"><span class="fa-brands fa-github"></span><span class="sr-only">GitHub</span></a></li>
+					</ul>
+				</article>
 
-    .white-slide { margin: 16px; padding: 32px 24px 110px; border-width: 4px; }
-    .two-col { flex-direction: column; }
-    .white-slide .photo-frame img { height: 280px; }
-    .slide-footer { left: 24px; right: 24px; bottom: 28px; flex-wrap: wrap; gap: 10px; }
-  }
-</style>
-</head>
-<body>
+			</div>
 
-<!-- ============ NAVBAR ============ -->
-<nav>
-  <a href="#hero" class="logo">Zahra Firdianti Zeny</a>
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#intro">Introduction</a></li>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#pendidikan">Pendidikan</a></li>
-    <li><a href="#pengalaman">Pengalaman</a></li>
-    <li><a href="#sertifikat">Sertifikat</a></li>
-    <li><a href="#proyek">Proyek</a></li>
-    <li><a href="#kontak">Kontak</a></li>
-  </ul>
-  <button class="burger" aria-label="menu">☰</button>
-</nav>
+			<!-- Footer -->
+			<footer id="footer" class="text-center text-xs text-gray-400 mt-auto">
+				<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net" class="underline hover:text-white">HTML5 UP</a>.</p>
+			</footer>
 
-<!-- ============ SLIDE 1 : HERO ============ -->
-<section class="slide" id="hero">
-  <div class="hero-img">
-    <!-- Foto kamu. Simpan IMG_5246.jpg di folder yang sama dengan file ini -->
-   <img src="images/pict01.jpg" alt="" />
-  </div>
-  <div class="hero-text">
-    <h1>My</h1> <div class="line"></div><br><h1>Portfolio</h1>
-    <p>Lulusan Sistem Informasi Universitas Gunadarma dengan fondasi kuat dalam
-    manajemen basis data, pengolahan data, dan analisis sistem. Berpengalaman dalam
-    input data, pengarsipan digital, dan koordinasi operasional.</p>
-    <div class="hero-btns">
-      <a href="#intro" class="btn btn-solid">LinkedIn</a>
-      <!-- Ganti href dengan link LinkedIn kamu yang asli -->
-      <a href="https://www.linkedin.com/in/zahrafirdiantizeny" target="" class="btn btn-outline">
-        <span class="circle">in</span> LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
+		</div>
 
-<!-- ============ SLIDE 2 : INTRODUCTION ============ -->
-<section class="slide white-slide" id="intro">
-  <div class="slide-topbar">
-    <span>Personal Presentation</span>
-    
-  </div>
+		<!-- Custom Message Modal (Replacing alert) -->
+		<div id="message-box" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
+			<div class="bg-[#1b1f22] border border-white/20 p-6 rounded max-w-sm w-full text-center shadow-2xl">
+				<p id="message-text" class="text-white text-sm mb-6"></p>
+				<button onclick="closeMessageBox()" class="button primary text-xs">OK</button>
+			</div>
+		</div>
 
-  <div class="two-col">
-    <div>
-      <h2>intro-<br>duction</h2>
-      <p>Lulusan <b>Sistem Informasi Universitas Gunadarma</b> dengan fondasi kuat dalam manajemen basis data,
-      pengolahan data, dan analisis sistem. Pengalaman kerja saya membentuk saya menjadi profesional yang <b>teliti, terstruktur, dan terbiasa bekerja dengan data skala kecil hngga menengah dengan tingkat akurasi tinggi</b>.</p>
-      <p>Berpengalaman dengan pengarsipak dokumen digital, input data, dan koordinasi operasional menggunakan <b>Google Workspace dan Microsoft Office</b>. Selain sisi teknis, saya juga menekuni UI/UX desin karena data yang baik layak disampaikan melalui antarmuka yang baik pula.</p>
-     <p>Saat ini saya berfokus berkembang sebagai <b>Data Analyst</b>, dengan keahlian database sebagai fondasi kuat dan sense desain sebagai nilai tambah yang membedakan.</p>
-    </div>
-    <div class="photo-frame">
-      <img src="images/pict02.jpg" alt="">
-    </div>
-  </div>
+		<script>
+			// Navigation switcher logic mimicking HTML5 UP Dimension
+			const navLinks = document.querySelectorAll('.nav-link');
+			const header = document.getElementById('header');
+			const panels = document.querySelectorAll('.panel');
 
-  <div class="slide-footer">
-    <span>Zahra Firdianti Zeny</span>
-    <a href="mailto:zahrafirdiantizeny@gmail.com">zahrafirdiantizeny@gmail.com</a>
-    <span>+62 856 7502 064</span>
-  </div>
-</section>
+			function showPanel(targetId) {
+				header.style.display = 'none';
+				panels.forEach(panel => {
+					if(panel.id === targetId) {
+						panel.classList.add('active');
+					} else {
+						panel.classList.remove('active');
+					}
+				});
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
 
-<!-- ============ SLIDE 3 : ABOUT ME ============ -->
-<section class="slide white-slide" id="about">
-  <div class="slide-topbar">
-    <span>Personal Presentation</span>
-    
-  </div>
+			function closePanels() {
+				panels.forEach(panel => panel.classList.remove('active'));
+				header.style.display = 'flex';
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
 
-  <h2>hello, i'm<br>Zahra Firdianti Zeny!</h2>
+			navLinks.forEach(link => {
+				link.addEventListener('click', (e) => {
+					e.preventDefault();
+					const href = link.getAttribute('href');
+					if(href.startsWith('#')) {
+						showPanel(href.substring(1));
+					}
+				});
+			});
 
-  <div class="fact-row"><b>Lokasi</b><span>Jakarta Selatan, Indonesia</span></div>
-  <div class="fact-row"><b>Pendidikan</b><span>S1 Sistem Informasi — Universitas Gunadarma (IPK 3.21/4.00)</span></div>
-  <div class="fact-row"><b>Minat</b><span>Data Analyst · Manajemen Basis Data · Analisis Sistem</span></div>
-  <div class="fact-row"><b>Bahasa</b><span>Bahasa Indonesia · Bahasa Inggris</span></div>
+			// Mobile menu toggle handler
+			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+			if(mobileMenuBtn) {
+				mobileMenuBtn.addEventListener('click', () => {
+					showPanel('project-section');
+				});
+			}
 
-  <div class="chip-group">
-    <span class="chip">Microsoft Office</span>
-    <span class="chip">Google Workspace</span>
-    <span class="chip">SQL</span>
-    <span class="chip">HTML</span>
-    <span class="chip">Python</span>
-    <span class="chip">Pengarsipan Digital</span>
-    <span class="chip">Input Data</span>
-  </div>
+			// Custom Message Box functions
+			function showMessageBox(text) {
+				document.getElementById('message-text').innerText = text;
+				document.getElementById('message-box').style.display = 'flex';
+			}
 
-  <div style="margin-top:32px;">
-    <a href="https://www.linkedin.com/" target="_blank" class="btn" style="background:#111; color:#fff;">Lihat LinkedIn Saya →</a>
-  </div>
-
-  <div class="slide-footer">
-    <span>Zahra Firdianti Zeny</span>
-    <a href="mailto:zahrafirdiantizeny@gmail.com">zahrafirdiantizeny@gmail.com</a>
-    <span>@zahrafirdiantizeny</span>
-  </div>
-</section>
-
-<!-- ============ NAVIGASI ALA PPT ============ -->
-<div class="ppt-nav">
-  <button id="prevBtn" aria-label="Sebelumnya">‹</button>
-  <span class="ppt-counter" id="counter">1 / 3</span>
-  <button id="nextBtn" aria-label="Berikutnya">›</button>
-</div>
-
-<script>
-  // Navigasi antar-slide ala PowerPoint (tombol + keyboard)
-  const slides = Array.from(document.querySelectorAll('.slide'));
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const counter = document.getElementById('counter');
-  let current = 0;
-
-  function goTo(i) {
-    if (i < 0 || i >= slides.length) return;
-    current = i;
-    slides[i].scrollIntoView({ behavior: 'smooth' });
-    counter.textContent = (i + 1) + ' / ' + slides.length;
-    prevBtn.disabled = (i === 0);
-    nextBtn.disabled = (i === slides.length - 1);
-  }
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') goTo(current + 1);
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(current - 1);
-  });
-
-  // Update posisi saat user scroll manual
-  window.addEventListener('scroll', () => {
-    let idx = 0;
-    slides.forEach((s, i) => {
-      if (s.getBoundingClientRect().top < window.innerHeight / 2) idx = i;
-    });
-    if (idx !== current) {
-      current = idx;
-      counter.textContent = (idx + 1) + ' / ' + slides.length;
-      prevBtn.disabled = (idx === 0);
-      nextBtn.disabled = (idx === slides.length - 1);
-    }
-  }, { passive: true });
-</script>
-
-</body>
+			function closeMessageBox() {
+				document.getElementById('message-box').style.display = 'none';
+			}
+		</script>
+	</body>
 </html>
