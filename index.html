@@ -60,7 +60,7 @@
 				<!-- Compact Navigation Menu (Single Line) -->
 				<nav>
 					<ul class="flex items-center space-x-6 text-sm uppercase tracking-widest font-semibold">
-						<li><a href="#about" class="text-gray-300 hover:text-white transition-colors nav-link">About</a></li>
+						<li><a href="#tentang" class="text-gray-300 hover:text-white transition-colors nav-link">Tentang</a></li>
 						<li class="text-gray-600">•</li>
 						<li><a href="#skill" class="text-gray-300 hover:text-white transition-colors nav-link">Skill</a></li>
 						<li class="text-gray-600">•</li>
@@ -86,7 +86,7 @@
 							Ganti atribut src pada tag <img> di bawah ini dengan link foto atau file lokal Anda.
 							Contoh: src="images/foto-profil.jpg"
 						-->
-						<img src="" alt="Foto Utama" class="absolute inset-w-full h-full object-cover opacity-80 hidden" id="main-profile-img" />
+						<img src="images/pct02.jpg" alt="Foto Utama" class="absolute inset-w-full h-full object-cover opacity-80 hidden" id="main-profile-img" />
 						<div class="text-center text-gray-400 text-sm border-2 border-dashed border-gray-600 p-8 rounded-lg w-3/4 flex flex-col items-center justify-center">
 							<i class="fa-solid fa-image text-3xl mb-2 text-gray-500"></i>
 							<span>[ Ganti Foto Utama Di Sini ]</span>
@@ -96,16 +96,16 @@
 
 					<!-- Right: Intro Content -->
 					<div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full">
-						<h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-white">Zahra Firdianti Zeny</h1>
+						<h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-white">My<br>Portfolio</br></h1>
+						<p><span><h3>Data Analyst | Database Administrator | UI/UX Designer</h3></span>
 						<p class="text-gray-300 text-base leading-relaxed">
-							Welcome to my professional portfolio. Explore my background, database and technical expertise, design skills, projects, and certificates below.
-						</p>
+							Saya percaya data terbaik lahir dari sistem yang rapi dan dipahami melalui desain yang manusiawi. Memadukan ketajaman analisis data, disiplin manajemen database, dan sense desain UI/UX untuk membantu bisnis mengambil keputusan yang tepat.						</p>
 						<div class="flex flex-wrap gap-4 pt-2">
 							<a href="#project" class="nav-link px-6 py-3 bg-white text-black font-semibold uppercase text-xs tracking-widest rounded hover:bg-gray-200 transition-all text-center">
-								View Projects
+								Lihat Project Saya
 							</a>
 							<a href="#contact" class="nav-link px-6 py-3 border border-white/30 text-white font-semibold uppercase text-xs tracking-widest rounded hover:bg-white/10 transition-all text-center">
-								Contact Me
+								Hubungi Saya
 							</a>
 						</div>
 					</div>
@@ -133,20 +133,22 @@
 
 		<!-- Templates for Sections -->
 		<template id="about-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider">About Me</h2>
+			<h3 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider"><div class="sec-tag reveal">TENTANG SAYA</h3></div>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
 				<!-- 
 					CARA GANTI FOTO ABOUT:
 					Ganti src="" di bawah dengan path foto Anda.
 				-->
 				<div class="h-64 bg-[#1b1f22] border-2 border-dashed border-gray-600 rounded flex flex-col items-center justify-center text-gray-400 text-sm p-4">
-					<img src="" alt="About Photo" class="w-full h-full object-cover rounded hidden" />
+					<img src="images/pict02.jpg" alt="About Photo" class="w-full h-full object-cover rounded hidden" />
 					<i class="fa-solid fa-image text-2xl mb-1 text-gray-500"></i>
 					<span>[ Ganti Foto About Di Sini ]</span>
 				</div>
 				<div class="space-y-4 text-gray-300 text-sm leading-relaxed">
-					<p>Hello! I am Zahra Firdianti Zeny. Passionate about data analysis, database management, and UI/UX design. I enjoy building structured solutions and intuitive digital experiences.</p>
-					<p>With a strong foundation in both technical database systems and creative design frameworks, I bridge the gap between robust functionality and aesthetic user experience.</p>
+					<h2 class="sec-title reveal">Satu Profil,Tiga Sudut Pandang</h2>
+					<p>Lulusan <b>Sistem Informasi Universitas Gunadarma</b> (IPK 3.21/4.00) dengan fondasi kuat dalam manajemen basis data, pengolahan data, dan analisis sistem. Pengalaman kerja saya membentuk saya menjadi profesional yang <b>teliti, terstruktur, dan terbiasa bekerja dengan data dalam skala kecil hingga menengah dengan tingkat akurasi tinggi</b>.</p>					
+					<p>Berpengalaman dengan pengasipan dokumen digital, input data, dan koordinasi operasional menggunkana <b>Google Workspace dan Microsoft Office</b>. Selain sisi teknis, saya juga menekuni <b>UI/UX design</b> <sec-tag>-</sec-tag> karena data yang baik layak disampaikan melalui antarmuka yang baik pula.</p>
+					<p>Saat ini saya berfokus berkembang sebagai <b>Data Analyst</b>, dengan keahlian database sebagai fondasi kuat dan sense desain sebagai nilai tambah yang membedakan</p>
 				</div>
 			</div>
 		</template>
