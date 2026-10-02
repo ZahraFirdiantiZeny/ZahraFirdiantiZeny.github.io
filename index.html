@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="id">
 	<head>
 		<title>Zahra Firdianti Zeny - Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- Google Fonts: Source Sans Pro (Dimension style) -->
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+		<!-- Google Fonts: Inter & Open Sans -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 		<!-- Tailwind CSS CDN -->
@@ -15,7 +15,8 @@
 				theme: {
 					extend: {
 						fontFamily: {
-							sans: ['"Source Sans Pro"', 'sans-serif'],
+							inter: ['Inter', 'sans-serif'],
+							sans: ['"Open Sans"', 'sans-serif'],
 						},
 						colors: {
 							darkBg: '#1b1f22',
@@ -27,12 +28,14 @@
 		</script>
 		<style>
 			body {
-				font-family: 'Source Sans Pro', sans-serif;
+				font-family: 'Open Sans', sans-serif;
 				background-color: #1b1f22;
 				color: #ffffff;
 				overflow: hidden;
 			}
-			/* Custom scrollbar for inner panel content if needed */
+			.font-inter {
+				font-family: 'Inter', sans-serif;
+			}
 			.custom-scrollbar::-webkit-scrollbar {
 				width: 6px;
 			}
@@ -50,86 +53,50 @@
 		<!-- Wrapper / Main Container -->
 		<div id="wrapper" class="flex-1 flex flex-col h-full w-full relative overflow-hidden">
 
-			<!-- Header / Compact Single-Line Navbar -->
+			<!-- Header / Navbar (Tanpa Titik) -->
 			<header class="w-full px-8 py-4 flex items-center justify-between z-30 bg-[#1b1f22]/90 backdrop-blur-md border-b border-white/10">
-				<!-- Brand / Name -->
-				<div class="text-xs font-semibold tracking-wide uppercase text-white">
+				<div class="text-xs font-semibold tracking-wide uppercase text-white font-inter">
 					Zahra Firdianti Zeny
 				</div>
-
-				<!-- Compact Navigation Menu (Single Line) -->
 				<nav>
-					<ul class="flex items-center space-x-4 text-xs font-semibold">
+					<ul class="flex items-center space-x-6 text-xs font-semibold">
 						<li><a href="#about" class="text-gray-300 hover:text-white transition-colors nav-link">Tentang</a></li>
-						<li class="text-gray-600">•</li>
 						<li><a href="#skill" class="text-gray-300 hover:text-white transition-colors nav-link">Keahlian</a></li>
-						<li class="text-gray-600">•</li>
 						<li><a href="#work" class="text-gray-300 hover:text-white transition-colors nav-link">Pengalaman</a></li>
-						<li class="text-gray-600">•</li>
 						<li><a href="#project" class="text-gray-300 hover:text-white transition-colors nav-link">Project</a></li>
-						<li class="text-gray-600">•</li>
 						<li><a href="#sertifikat" class="text-gray-300 hover:text-white transition-colors nav-link">Sertifikat</a></li>
-						<li class="text-gray-600">•</li>
 						<li><a href="#contact" class="text-gray-300 hover:text-white transition-colors nav-link">Kontak</a></li>
 					</ul>
 				</nav>
 			</header>
 
-			<!-- Main View (Home - Full Screen & Edge-to-Edge Split) -->
+			<!-- Main View (Home - Full Screen & Split Layout) -->
 			<main class="flex-1 w-full h-full relative overflow-hidden">
 				<div class="w-full h-full grid grid-cols-1 lg:grid-cols-2 items-stretch bg-[#1b1f22]">
         
-			
-        <!-- Left: Image (Foto Utama ditampilkan, kelas 'hidden' dihapus & placeholder disembunyikan) -->
-		<div class="h-full bg-[#1b1f22] flex flex-col items-center justify-center relative p-6 border-r border-white/10">
-		<!-- Foto Utama -->
-		<img src="images/pict02.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-80" id="main-profile-img" />
-						
-		<!-- Placeholder kotak putus-putus disembunyikan pakai kelas 'hidden' -->
-		<div class="text-center text-gray-400 text-sm border-2 border-dashed border-gray-600 p-8 rounded-lg w-3/4 h-3/4 flex flex-col items-center justify-center hidden">
-			<i class="fa-solid fa-image text-3xl mb-2 text-gray-500"></i>
-			<span><img src="images/pict02.jpg" alt""></span>
-			<span class="text-xs text-gray-500 mt-1">Simpan file foto di folder images/ lalu masukkan path-nya di atribut src tag img</span>
-		</div>
-		</div>
-
-        <!-- Right: Intro Content (Edge-to-Edge) -->
-		<div class="p-8 lg:p-16 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full bg-[#212629]">
-						
-		<!-- Title with Custom Horizontal Line Next to "My" (Ukuran font diperbesar menjadi text-5xl lg:text-7xl) -->
-		<div class="space-y-1">
-		<div class="flex items-center space-x-4">
-			<h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white">My</h1>
-				<div class="flex-1 h-[3px] bg-white/40"></div>
+					<!-- Left: Adjustable Image -->
+					<div class="h-full bg-[#1b1f22] flex flex-col items-center justify-center relative border-r border-white/10 overflow-hidden">
+						<img src="images/pict02.jpg" alt="Profile Picture" class="absolute inset-0 w-full h-full object-cover opacity-90" id="main-profile-img" />
 					</div>
-						<h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white">Portfolio</h1>
-						</div>
-						<p class="text-gray-300 text-sm md:text-base font-medium tracking-wide">
-                Data Analyst | Database Administrator | UI/UX Designer
-            </p>
-            <p class="text-gray-400 text-sm leading-relaxed">
-                Saya percaya data terbaik lahir dari sistem yang rapi dan dipahami melalui desain yang manusiawi. Memadukan ketajaman analisis data, disiplin manajemen database, dan sense desain UI/UX untuk membantu bisnis mengambil keputusan yang tepat.
-            </p>
-            <div class="flex flex-wrap gap-4 pt-4">
-                <a href="#project" class="nav-link px-6 py-3 bg-white text-black font-semibold uppercase text-xs tracking-widest rounded hover:bg-gray-200 transition-all text-center">
-                    Lihat Project Saya
-                </a>
-                <a href="#contact" class="nav-link px-6 py-3 border border-white/30 text-white font-semibold uppercase text-xs tracking-widest rounded hover:bg-white/10 transition-all text-center">
-                    Hubungi Saya
-                </a>
-            </div>
-        </div>
-
-    </div>
-</main>
 
 					<!-- Right: Intro Content -->
-					<div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full">
-						<h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-white">My<br>Portfolio</br></h1>
-						<p><span><h2>Data Analyst | Database Administrator | UI/UX Designer</h2></span>
-						<p class="text-gray-300 text-base leading-relaxed">
-							Saya percaya data terbaik lahir dari sistem yang rapi dan dipahami melalui desain yang manusiawi. Memadukan ketajaman analisis data, disiplin manajemen database, dan sense desain UI/UX untuk membantu bisnis mengambil keputusan yang tepat.						</p>
-						<div class="flex flex-wrap gap-4 pt-2">
+					<div class="p-8 lg:p-16 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full bg-[#212629]">
+						<!-- Title with Custom Horizontal Line & Inter Font -->
+						<div class="space-y-1">
+							<div class="flex items-center space-x-4">
+								<h1 class="text-6xl lg:text-8xl font-bold tracking-tight text-white font-inter">My</h1>
+								<div class="flex-1 h-[3px] bg-white/50"></div>
+							</div>
+							<h1 class="text-6xl lg:text-8xl font-bold tracking-tight text-white font-inter">Portfolio</h1>
+						</div>
+						<!-- Subtitle (Open Sans, 2x Larger) -->
+						<p class="text-gray-300 text-2xl md:text-3xl font-semibold tracking-wide font-sans">
+							Data Analyst | Database Administrator | UI/UX Designer
+						</p>
+						<p class="text-gray-400 text-sm leading-relaxed font-sans">
+							Saya percaya data terbaik lahir dari sistem yang rapi dan dipahami melalui desain yang manusiawi. Memadukan ketajaman analisis data, disiplin manajemen database, dan sense desain UI/UX untuk membantu bisnis mengambil keputusan yang tepat.
+						</p>
+						<div class="flex flex-wrap gap-4 pt-4">
 							<a href="#project" class="nav-link px-6 py-3 bg-white text-black font-semibold uppercase text-xs tracking-widest rounded hover:bg-gray-200 transition-all text-center">
 								Lihat Project Saya
 							</a>
@@ -142,133 +109,95 @@
 				</div>
 			</main>
 
-			<!-- Sections / Modals Container (Hidden by default, shown when clicked) -->
+			<!-- Sections / Modals Container -->
 			<div id="sections-container" class="fixed inset-0 bg-[#1b1f22]/95 z-50 hidden flex items-center justify-center p-6">
 				<div class="max-w-4xl w-full h-[85vh] bg-[#212629] border border-white/10 rounded-lg shadow-2xl overflow-y-auto custom-scrollbar p-8 relative">
-					
 					<!-- Close Button -->
-					<button id="close-section" class="absolute top-6 right-6 text-gray-400 hover:text-white text-2xl focus:outline-none">
+					<button id="close-section" class="absolute top-6 right-6 text-gray-400 hover:text-white text-2xl focus:outline-none z-10">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
-
-					<!-- Dynamic Section Content Wrapper -->
-					<div id="section-content" class="mt-4">
-						<!-- Content injected via JS -->
-					</div>
+					<div id="section-content" class="mt-4"></div>
 				</div>
 			</div>
 
 		</div>
 
+		<!-- Image Lightbox Modal for Projects & Certificates -->
+		<div id="image-modal" class="fixed inset-0 bg-black/9oid z-[60] hidden flex items-center justify-center p-4">
+			<div class="relative max-w-3xl max-h-[90vh]">
+				<button id="close-image-modal" class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300"><i class="fa-solid fa-xmark"></i></button>
+				<img id="modal-img-element" src="" alt="Zoomed Image" class="max-w-full max-h-[85vh] object-contain rounded border border-white/20" />
+			</div>
+		</div>
+
 		<!-- Templates for Sections -->
 		<template id="about-template">
-			<h3 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider"><div class="sec-tag reveal">TENTANG SAYA</h3></div>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
-				<!-- 
-					CARA GANTI FOTO ABOUT:
-					Ganti src="" di bawah dengan path foto Anda.
-				-->
-				<div class="h-64 bg-[#1b1f22] border-2 border-dashed border-gray-600 rounded flex flex-col items-center justify-center text-gray-400 text-sm p-4">
-					<img src="images/pict02.jpg" alt="">
+			<h3 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Tentang Saya</h3>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+				<div class="md:col-span-2 space-y-4 text-gray-300 text-left">
+					<h2 class="text-xl md:text-2xl font-bold font-sans text-white mb-2">
+						<span class="font-bold">Satu Profil, Tiga Sudut Pandang</span>
+					</h2>
+					<div class="space-y-3 text-xs md:text-sm leading-relaxed text-gray-300 font-sans">
+						<p>— Lulusan <b>Sistem Informasi Universitas Gunadarma</b> (IPK 3.21/4.00) dengan fondasi kuat dalam manajemen basis data, pengolahan data, dan analisis sistem. Pengalaman kerja saya membentuk saya menjadi profesional yang <b>teliti, terstruktur, dan terbiasa bekerja dengan data dalam skala kecil hingga menengah dengan tingkat akurasi tinggi</b>.</p>
+						<p>— Berpengalaman dengan pengasipan dokumen digital, input data, dan koordinasi operasional menggunakan <b>Google Workspace dan Microsoft Office</b>. Selain sisi teknis, saya juga menekuni <b>UI/UX design</b> — karena data yang baik layak disampaikan melalui antarmuka yang baik pula.</p>
+						<p>— Saat ini saya berfokus berkembang sebagai <b>Data Analyst</b>, dengan keahlian database sebagai fondasi kuat dan sense desain sebagai nilai tambah yang membedakan.</p>
+					</div>
 				</div>
-				<div class="space-y-4 text-gray-300 text-3xl font-bold leading-relaxed">
-					<h2 class="sec-title reveal">Satu Profil,Tiga Sudut Pandang</h2>
+				<!-- Focus Card on the Right -->
+				<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
+					<div class="text-white/40 font-inter font-bold text-lg">01</div>
+					<h4 class="font-semibold text-white text-sm font-inter">🎯 Primary — Data Analyst</h4>
+					<p class="text-xs text-gray-400 font-sans leading-relaxed">Transformasi data menjadi insight bisnis yang actionable melalui SQL, Python, dan analisis statistik.</p>
 				</div>
-				<div class="space-y-4 text-gray-300 text-sm leading-relaxed">
-					<p>Lulusan <b>Sistem Informasi Universitas Gunadarma</b> (IPK 3.21/4.00) dengan fondasi kuat dalam manajemen basis data, pengolahan data, dan analisis sistem. Pengalaman kerja saya membentuk saya menjadi profesional yang <b>teliti, terstruktur, dan terbiasa bekerja dengan data dalam skala kecil hingga menengah dengan tingkat akurasi tinggi</b>.</p>					
-					<p>Berpengalaman dengan pengasipan dokumen digital, input data, dan koordinasi operasional menggunkana <b>Google Workspace dan Microsoft Office</b>. Selain sisi teknis, saya juga menekuni <b>UI/UX design</b> <sec-tag>-</sec-tag> karena data yang baik layak disampaikan melalui antarmuka yang baik pula.</p>
-					<p>Saat ini saya berfokus berkembang sebagai <b>Data Analyst</b>, dengan keahlian database sebagai fondasi kuat dan sense desain sebagai nilai tambah yang membedakan</p>
-				</div>
-				<div class="focus-card">
-					<div class="focus-card reveal"><div class="focus-num">01</div><h4><span>&#127919;</span> Primary<sec-tag>-</sec-tag>Data Analyst</h4><p>Transformasi data menjadi insight bisnis yang actionable melalui SQL, Python, dan analisis statistik.</p></div></div>
 			</div>
 		</template>
 
 		<template id="skill-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider">Skills & Expertise</h2>
-			<div class="space-y-8">
-				<!-- Tech Skills -->
-				<div>
-					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3">Tech Skills</h3>
-					<div class="space-y-4">
+			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Skills & Expertise</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				<!-- Tech Skills (Horizontal / Side-by-Side layout) -->
+				<div class="bg-[#1b1f22] p-6 rounded-lg border border-white/5">
+					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3 font-inter">Tech Skills</h3>
+					<div class="space-y-4 text-xs md:text-sm">
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">SQL Server</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Intermediate</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 75%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">SQL Server</span><span class="text-gray-400">Intermediate</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 75%;"></div></div>
 						</div>
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">Oracle Database</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Beginner+</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 50%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">Oracle Database</span><span class="text-gray-400">Beginner+</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 50%;"></div></div>
 						</div>
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">Python & Machine Learning</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Fundamental</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 40%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">Python & Machine Learning</span><span class="text-gray-400">Fundamental</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 40%;"></div></div>
 						</div>
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">JavaScript & HTML</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Fundamental</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 40%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">JavaScript & HTML</span><span class="text-gray-400">Fundamental</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 40%;"></div></div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Design Skills -->
-				<div>
-					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3">Design Skills</h3>
-					<div class="space-y-4">
+				<!-- Design Skills (Horizontal / Side-by-Side layout) -->
+				<div class="bg-[#1b1f22] p-6 rounded-lg border border-white/5">
+					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3 font-inter">Design Skills</h3>
+					<div class="space-y-4 text-xs md:text-sm">
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">Figma (Wireframe & Prototype)</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Advanced / Design</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 85%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">Figma (Wireframe & Prototype)</span><span class="text-gray-400">Advanced</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 85%;"></div></div>
 						</div>
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">UI/UX Research</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Fundamental</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 45%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">UI/UX Research</span><span class="text-gray-400">Fundamental</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 45%;"></div></div>
 						</div>
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">UX Writing</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Fundamental</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 40%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">UX Writing</span><span class="text-gray-400">Fundamental</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 40%;"></div></div>
 						</div>
 						<div>
-							<div class="flex justify-between text-sm mb-1">
-								<span class="font-medium">Photoshop</span>
-								<span class="text-xs uppercase tracking-wider text-gray-400">Design</span>
-							</div>
-							<div class="w-full bg-[#1b1f22] h-2.5 rounded-full overflow-hidden">
-								<div class="bg-white h-full rounded-full" style="width: 70%;"></div>
-							</div>
+							<div class="flex justify-between mb-1"><span class="font-medium">Photoshop</span><span class="text-gray-400">Design</span></div>
+							<div class="w-full bg-[#272c2f] h-2 rounded-full overflow-hidden"><div class="bg-white h-full rounded-full" style="width: 70%;"></div></div>
 						</div>
 					</div>
 				</div>
@@ -276,84 +205,76 @@
 		</template>
 
 		<template id="work-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider">Work Experience</h2>
+			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Work Experience</h2>
 			<div class="space-y-6 text-gray-300 text-sm">
 				<div class="bg-[#1b1f22] p-6 rounded border border-white/5">
 					<div class="flex justify-between items-center mb-2">
-						<h3 class="text-lg font-semibold text-white">IT Consultant & Database Assistant</h3>
+						<h3 class="text-lg font-semibold text-white font-inter">IT Consultant & Database Assistant</h3>
 						<span class="text-xs text-gray-400">2025 - Present</span>
 					</div>
 					<p class="text-gray-400 mb-2">PT. Lepkom Mandiri</p>
-					<p>Involved in database configuration, SQL Server implementations, and technical documentation for enterprise systems.</p>
+					<p class="text-xs">Involved in database configuration, SQL Server implementations, and technical documentation for enterprise systems.</p>
 				</div>
 				<div class="bg-[#1b1f22] p-6 rounded border border-white/5">
 					<div class="flex justify-between items-center mb-2">
-						<h3 class="text-lg font-semibold text-white">UI/UX & Research Intern</h3>
+						<h3 class="text-lg font-semibold text-white font-inter">UI/UX & Research Intern</h3>
 						<span class="text-xs text-gray-400">2024 - 2025</span>
 					</div>
 					<p class="text-gray-400 mb-2">Freelance / Academic Projects</p>
-					<p>Conducted user experience evaluations using standardized frameworks (UEQ) and created intuitive wireframes and prototypes in Figma.</p>
+					<p class="text-xs">Conducted user experience evaluations using standardized frameworks (UEQ) and created intuitive wireframes and prototypes in Figma.</p>
 				</div>
 			</div>
 		</template>
 
 		<template id="project-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider">Project Pilihan</h2>
-			<p class="text-gray-300 text-sm mb-6">Hasil karya desain UI/UX dan visual - tempat data bertemu estetika.</p>
+			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Project Pilihan</h2>
+			<p class="text-gray-300 text-sm mb-6">Hasil karya desain UI/UX dan visual - tempat data bertemu estetika. Klik pada gambar untuk melihat lebih jelas.</p>
 			
 			<div class="space-y-8">
 				<div>
-					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3">Figma Projects (UI/UX)</h3>
+					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3 font-inter">Figma Projects (UI/UX)</h3>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-						<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-							<!-- 
-								CARA GANTI FOTO PROYEK FIGMA 1:
-								Ganti src="" di bawah dengan path gambar proyek Figma pertama.
-							-->
-							<div class="h-40 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-3">
-								<img src="images/figma1.png" alt="Figma Project 1" class="w-full h-full object-cover rounded" />
+						<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+							<div>
+								<div class="h-44 bg-[#272c2f] rounded overflow-hidden mb-3 cursor-pointer group relative">
+									<img src="images/figma1.png" alt="Figma Project 1" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform duration-300 clickable-img" />
+								</div>
+								<h4 class="font-semibold text-white font-inter">Makan Yuk - Food Delivery App</h4>
+								<p class="text-xs text-gray-400 mt-1 leading-relaxed">Desain aplikasi pemesanan makanan mobile-first: onboarding, home, detail produk, hingga alur checkout.</p>
 							</div>
-							<h4 class="font-semibold text-white">Makan Yuk - Food Delivery Appy</h4>
-							<p class="text-xs text-gray-400 mt-1">Desain aplikasi pemesanan makanan mobile-first: onboarding, home dengan best seller & diet menu, detail produk, hinggal alur checkout dengan total pembayaran. Fokus pada pengalaman pengguna yang cepat dan intuitif.
 						</div>
-						<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-							<!-- 
-								CARA GANTI FOTO PROYEK FIGMA 2:
-								Ganti src="" di bawah dengan path gambar proyek Figma kedua.
-							-->
-							<div class="h-40 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-3">
-								<img src="images/figma2.png" alt="Figma Project 2" class="w-full h-full object-cover rounded" />
+						<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+							<div>
+								<div class="h-44 bg-[#272c2f] rounded overflow-hidden mb-3 cursor-pointer group relative">
+									<img src="images/figma2.png" alt="Figma Project 2" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform duration-300 clickable-img" />
+								</div>
+								<h4 class="font-semibold text-white font-inter">Human Initiative - Pelaporan Web</h4>
+								<p class="text-xs text-gray-400 mt-1 leading-relaxed">Redesign halaman pelaporan untuk NGO Human Initiative dengan klasifikasi laporan dan navigasi sederhana.</p>
 							</div>
-							<h4 class="font-semibold text-white">Human Initiative - Pelaporan Web</h4>
-							<p class="text-xs text-gray-400 mt-1">Redesign halaman pelaporan untuk NGO Human Initiative: klasifikasi laporan (Pengaduan, Aspirasi, Permintaan Informasi), form judul & isi laporan yang jelas, dengan navigasi sederhana dan hierarki visual yang rapi.</p>
 						</div>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3">Photoshop Projects (Design & Branding)</h3>
+					<h3 class="text-xl font-semibold mb-4 text-white border-l-4 border-white pl-3 font-inter">Photoshop Projects (Design & Branding)</h3>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-						<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-							<!-- 
-								CARA GANTI FOTO PROYEK PHOTOSHOP 1:
-								Ganti src="" di bawah dengan path gambar Photoshop pertama.
-							-->
-							<div class="h-40 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-3">
-								<img src="images/ps01.jpg" alt="Photoshop Project 1" class="w-full h-full object-cover rounded" />
+						<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+							<div>
+								<div class="h-44 bg-[#272c2f] rounded overflow-hidden mb-3 cursor-pointer group relative">
+									<img src="images/ps01.jpg" alt="Photoshop Project 1" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform duration-300 clickable-img" />
+								</div>
+								<h4 class="font-semibold text-white font-inter">Culinary & Beverage Branding</h4>
+								<p class="text-xs text-gray-400 mt-1 leading-relaxed">Aesthetic menu visuals and promotional stall design.</p>
 							</div>
-							<h4 class="font-semibold text-white">Culinary & Beverage Branding</h4>
-							<p class="text-xs text-gray-400 mt-1">Aesthetic menu visuals and promotional stall design.</p>
 						</div>
-						<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-							<!-- 
-								CARA GANTI FOTO PROYEK PHOTOSHOP 2:
-								Ganti src="" di bawah dengan path gambar Photoshop kedua.
-							-->
-							<div class="h-40 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-3">
-								<img src="images/ps02.jpg" alt="Photoshop Project 2" class="w-full h-full object-cover rounded" />
+						<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+							<div>
+								<div class="h-44 bg-[#272c2f] rounded overflow-hidden mb-3 cursor-pointer group relative">
+									<img src="images/ps02.jpg" alt="Photoshop Project 2" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform duration-300 clickable-img" />
+								</div>
+								<h4 class="font-semibold text-white font-inter">Digital Campaign Assets</h4>
+								<p class="text-xs text-gray-400 mt-1 leading-relaxed">Engaging social media graphics and promotional banners.</p>
 							</div>
-							<h4 class="font-semibold text-white">Digital Campaign Assets</h4>
-							<p class="text-xs text-gray-400 mt-1">Engaging social media graphics and promotional banners.</p>
 						</div>
 					</div>
 				</div>
@@ -361,82 +282,82 @@
 		</template>
 
 		<template id="sertifikat-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider">Sertifikasi & Pelatihan</h2>
-			<p class="text-gray-300 text-sm mb-6">Komitmen berkelanjutan untuk terus belajar dan berkembang.</p>			
+			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Sertifikasi & Pelatihan</h2>
+			<p class="text-gray-300 text-sm mb-6">Komitmen berkelanjutan untuk terus belajar dan berkembang. Klik gambar untuk memperbesar.</p>			
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<!-- Sertifikat 1 -->
 				<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-					<div class="h-32 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-2">
-						<img src="images/Javascript fundamental01.jpg" alt="Sertifikat 1" class="w-full h-full object-cover rounded" />
+					<div class="h-32 bg-[#272c2f] rounded overflow-hidden mb-2 cursor-pointer group relative">
+						<img src="images/Javascript fundamental01.jpg" alt="Sertifikat 1" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform clickable-img" />
 					</div>
-					<h4 class="font-semibold text-sm text-white">JavaScript Progamming Fundamental</h4>
-					<p class="text-xs text-gray-400 mt-1">Universitas Gunadarma</p>
-					<p>September 2025</p>
+					<h4 class="font-semibold text-sm text-white font-inter">JavaScript Programming Fundamental</h4>
+					<p class="text-xs text-gray-400 mt-1">Universitas Gunadarma • September 2025</p>
 				</div>
-				<!-- Sertifikat 2 -->
-				<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-					<div class="h-32 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-2">
-						<img src="" alt="Sertifikat 2" class="w-full h-full object-cover rounded hidden" />
-						<span>[ Sertifikat 2 ]</span>
+				<!-- Sertifikat 2 - 6 (Uniform height & clickable) -->
+				<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+					<div>
+						<div class="h-32 bg-[#272c2f] rounded overflow-hidden mb-2 cursor-pointer group relative flex items-center justify-center">
+							<img src="images/pict02.jpg" alt="Sertifikat 2" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform clickable-img" />
+						</div>
+						<h4 class="font-semibold text-sm text-white font-inter">UI/UX Design Essentials</h4>
+						<p class="text-xs text-gray-400 mt-1">Figma & Prototyping Workshop</p>
 					</div>
-					<h4 class="font-semibold text-sm text-white">UI/UX Design Essentials</h4>
-					<p class="text-xs text-gray-400 mt-1">Figma & Prototyping Workshop</p>
 				</div>
-				<!-- Sertifikat 3 -->
-				<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-					<div class="h-32 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-2">
-						<img src="" alt="Sertifikat 3" class="w-full h-full object-cover rounded hidden" />
-						<span>[ Sertifikat 3 ]</span>
+				<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+					<div>
+						<div class="h-32 bg-[#272c2f] rounded overflow-hidden mb-2 cursor-pointer group relative flex items-center justify-center">
+							<img src="images/pict02.jpg" alt="Sertifikat 3" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform clickable-img" />
+						</div>
+						<h4 class="font-semibold text-sm text-white font-inter">Python & Data Analysis</h4>
+						<p class="text-xs text-gray-400 mt-1">Quantitative Research Methods</p>
 					</div>
-					<h4 class="font-semibold text-sm text-white">Python & Data Analysis</h4>
-					<p class="text-xs text-gray-400 mt-1">Quantitative Research Methods</p>
 				</div>
-				<!-- Sertifikat 4 -->
-				<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-					<div class="h-32 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-2">
-						<img src="" alt="Sertifikat 4" class="w-full h-full object-cover rounded hidden" />
-						<span>[ Sertifikat 4 ]</span>
+				<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+					<div>
+						<div class="h-32 bg-[#272c2f] rounded overflow-hidden mb-2 cursor-pointer group relative flex items-center justify-center">
+							<img src="images/pict02.jpg" alt="Sertifikat 4" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform clickable-img" />
+						</div>
+						<h4 class="font-semibold text-sm text-white font-inter">Oracle Database Fundamentals</h4>
+						<p class="text-xs text-gray-400 mt-1">Relational Database Course</p>
 					</div>
-					<h4 class="font-semibold text-sm text-white">Oracle Database Fundamentals</h4>
-					<p class="text-xs text-gray-400 mt-1">Relational Database Course</p>
 				</div>
-				<!-- Sertifikat 5 -->
-				<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-					<div class="h-32 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-2">
-						<img src="" alt="Sertifikat 5" class="w-full h-full object-cover rounded hidden" />
-						<span>[ Sertifikat 5 ]</span>
+				<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+					<div>
+						<div class="h-32 bg-[#272c2f] rounded overflow-hidden mb-2 cursor-pointer group relative flex items-center justify-center">
+							<img src="images/pict02.jpg" alt="Sertifikat 5" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform clickable-img" />
+						</div>
+						<h4 class="font-semibold text-sm text-white font-inter">UX Writing & Copywriting</h4>
+						<p class="text-xs text-gray-400 mt-1">Digital Content Strategy</p>
 					</div>
-					<h4 class="font-semibold text-sm text-white">UX Writing & Copywriting</h4>
-					<p class="text-xs text-gray-400 mt-1">Digital Content Strategy</p>
 				</div>
-				<!-- Sertifikat 6 -->
-				<div class="bg-[#1b1f22] p-4 rounded border border-white/5">
-					<div class="h-32 bg-[#272c2f] border border-dashed border-gray-600 rounded flex items-center justify-center text-gray-400 text-xs mb-2">
-						<img src="" alt="Sertifikat 6" class="w-full h-full object-cover rounded hidden" />
-						<span>[ Sertifikat 6 ]</span>
+				<div class="bg-[#1b1f22] p-4 rounded border border-white/5 flex flex-col justify-between">
+					<div>
+						<div class="h-32 bg-[#272c2f] rounded overflow-hidden mb-2 cursor-pointer group relative flex items-center justify-center">
+							<img src="images/pict02.jpg" alt="Sertifikat 6" class="w-full h-full object-cover rounded group-hover:scale-105 transition-transform clickable-img" />
+						</div>
+						<h4 class="font-semibold text-sm text-white font-inter">Photoshop Creative Design</h4>
+						<p class="text-xs text-gray-400 mt-1">Visual Branding Training</p>
 					</div>
-					<h4 class="font-semibold text-sm text-white">Photoshop Creative Design</h4>
-					<p class="text-xs text-gray-400 mt-1">Visual Branding Training</p>
 				</div>
 			</div>
 		</template>
 
 		<template id="contact-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider">Contact Me</h2>
+			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Contact Me</h2>
 			<form method="post" action="#" class="space-y-4">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
 						<label for="name" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Name</label>
-						<input type="text" name="name" id="name" class="w-full bg-[#1b1f22] border border-white/20 rounded p-2 text-white focus:outline-none focus:border-white transition-colors" />
+						<input type="text" name="name" id="name" class="w-full bg-[#1b1f22] border border-white/20 rounded p-2 text-white focus:outline-none focus:border-white transition-colors text-xs" />
 					</div>
 					<div>
 						<label for="email" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Email</label>
-						<input type="text" name="email" id="email" class="w-full bg-[#1b1f22] border border-white/20 rounded p-2 text-white focus:outline-none focus:border-white transition-colors" />
+						<input type="text" name="email" id="email" class="w-full bg-[#1b1f22] border border-white/20 rounded p-2 text-white focus:outline-none focus:border-white transition-colors text-xs" />
 					</div>
 				</div>
 				<div>
 					<label for="message" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Message</label>
-					<textarea name="message" id="message" rows="4" class="w-full bg-[#1b1f22] border border-white/20 rounded p-2 text-white focus:outline-none focus:border-white transition-colors"></textarea>
+					<textarea name="message" id="message" rows="4" class="w-full bg-[#1b1f22] border border-white/20 rounded p-2 text-white focus:outline-none focus:border-white transition-colors text-xs"></textarea>
 				</div>
 				<div class="flex items-center space-x-4 pt-2">
 					<input type="submit" value="Send Message" class="px-6 py-2 bg-white text-black font-semibold uppercase text-xs tracking-widest rounded hover:bg-gray-200 cursor-pointer transition-all" />
@@ -451,12 +372,17 @@
 			</ul>
 		</template>
 
-		<!-- Script for Modal Navigation -->
+		<!-- Script for Modal Navigation & Lightbox -->
 		<script>
 			const navLinks = document.querySelectorAll('.nav-link');
 			const sectionsContainer = document.getElementById('sections-container');
 			const sectionContent = document.getElementById('section-content');
 			const closeSectionBtn = document.getElementById('close-section');
+			
+			// Lightbox elements
+			const imageModal = document.getElementById('image-modal');
+			const modalImgElement = document.getElementById('modal-img-element');
+			const closeImageModal = document.getElementById('close-image-modal');
 
 			navLinks.forEach(link => {
 				link.addEventListener('click', (e) => {
@@ -467,6 +393,7 @@
 						sectionContent.innerHTML = '';
 						sectionContent.appendChild(template.content.cloneNode(true));
 						sectionsContainer.classList.remove('hidden');
+						initLightboxListeners();
 					}
 				});
 			});
@@ -478,6 +405,27 @@
 			sectionsContainer.addEventListener('click', (e) => {
 				if (e.target === sectionsContainer) {
 					sectionsContainer.classList.add('hidden');
+				}
+			});
+
+			// Function to bind click event on images for popup/lightbox preview
+			function initLightboxListeners() {
+				const clickableImgs = sectionsContainer.querySelectorAll('.clickable-img');
+				clickableImgs.forEach(img => {
+					img.addEventListener('click', () => {
+						modalImgElement.src = img.src;
+						imageModal.classList.remove('hidden');
+					});
+				});
+			}
+
+			closeImageModal.addEventListener('click', () => {
+				imageModal.classList.add('hidden');
+			});
+
+			imageModal.addEventListener('click', (e) => {
+				if (e.target === imageModal) {
+					imageModal.classList.add('hidden');
 				}
 			});
 		</script>
