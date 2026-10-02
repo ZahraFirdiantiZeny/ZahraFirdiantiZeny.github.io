@@ -59,18 +59,18 @@
 
 				<!-- Compact Navigation Menu (Single Line) -->
 				<nav>
-					<ul class="flex items-center space-x-6 text-xs uppercase tracking-widest font-semibold">
+					<ul class="flex items-center space-x-4 text-xs font-semibold">
 						<li><a href="#about" class="text-gray-300 hover:text-white transition-colors nav-link">Tentang</a></li>
 						<li class="text-gray-600">•</li>
-						<li><a href="#skill" class="text-gray-300 hover:text-white transition-colors nav-link">Skill</a></li>
+						<li><a href="#skill" class="text-gray-300 hover:text-white transition-colors nav-link">Keahlian</a></li>
 						<li class="text-gray-600">•</li>
-						<li><a href="#work" class="text-gray-300 hover:text-white transition-colors nav-link">Work</a></li>
+						<li><a href="#work" class="text-gray-300 hover:text-white transition-colors nav-link">Pengalaman</a></li>
 						<li class="text-gray-600">•</li>
 						<li><a href="#project" class="text-gray-300 hover:text-white transition-colors nav-link">Project</a></li>
 						<li class="text-gray-600">•</li>
 						<li><a href="#sertifikat" class="text-gray-300 hover:text-white transition-colors nav-link">Sertifikat</a></li>
 						<li class="text-gray-600">•</li>
-						<li><a href="#contact" class="text-gray-300 hover:text-white transition-colors nav-link">Contact</a></li>
+						<li><a href="#contact" class="text-gray-300 hover:text-white transition-colors nav-link">Kontak</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -83,7 +83,7 @@
         <!-- Left: Image (Foto Utama ditampilkan, kelas 'hidden' dihapus & placeholder disembunyikan) -->
 		<div class="h-full bg-[#1b1f22] flex flex-col items-center justify-center relative p-6 border-r border-white/10">
 		<!-- Foto Utama -->
-		<img src="images/pict02.jpg" alt="Foto Utama" class="absolute inset-0 w-full h-full object-cover opacity-80" id="main-profile-img" />
+		<img src="images/pict02.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-80" id="main-profile-img" />
 						
 		<!-- Placeholder kotak putus-putus disembunyikan pakai kelas 'hidden' -->
 		<div class="text-center text-gray-400 text-sm border-2 border-dashed border-gray-600 p-8 rounded-lg w-3/4 h-3/4 flex flex-col items-center justify-center hidden">
@@ -93,10 +93,18 @@
 		</div>
 		</div>
 
-      <!-- Right: Intro Content -->
-			<div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full">
-				<h1 class="text-8xl lg:text-10xl font-bold tracking-tight text-white">My</h1><h1><p>Fortofolio</p></h1>
-            <p class="text-gray-300 text-4xl md:text-base font-medium tracking-wide">
+        <!-- Right: Intro Content (Edge-to-Edge) -->
+		<div class="p-8 lg:p-16 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full bg-[#212629]">
+						
+		<!-- Title with Custom Horizontal Line Next to "My" (Ukuran font diperbesar menjadi text-5xl lg:text-7xl) -->
+		<div class="space-y-1">
+		<div class="flex items-center space-x-4">
+			<h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white">My</h1>
+				<div class="flex-1 h-[3px] bg-white/40"></div>
+					</div>
+						<h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white">Portfolio</h1>
+						</div>
+						<p class="text-gray-300 text-sm md:text-base font-medium tracking-wide">
                 Data Analyst | Database Administrator | UI/UX Designer
             </p>
             <p class="text-gray-400 text-sm leading-relaxed">
