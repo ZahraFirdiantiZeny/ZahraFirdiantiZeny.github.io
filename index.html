@@ -86,25 +86,23 @@
                 Ganti atribut src pada tag <img> di bawah ini dengan link foto atau file lokal Anda.
                 Contoh: src="images/foto-profil.jpg"
             -->
-            <img src="images/pict02.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-80 hidden" id="main-profile-img" />
+            <img src="" alt="Foto Utama" class="absolute inset-0 w-full h-full object-cover opacity-80 hidden" id="main-profile-img" />
             <div class="text-center text-gray-400 text-sm border-2 border-dashed border-gray-600 p-8 rounded-lg w-3/4 h-3/4 flex flex-col items-center justify-center">
                 <i class="fa-solid fa-image text-3xl mb-2 text-gray-500"></i>
-                <span>[ Ganti Foto Utama Di Sini ]</span>
+                <span><img src="images/pict02.jpg" alt=""></span>
                 <span class="text-xs text-gray-500 mt-1">Simpan file foto di folder images/ lalu masukkan path-nya di atribut src tag img</span>
             </div>
         </div>
 
-        <!-- Right: Intro Content (Edge-to-Edge) -->
-        <div class="p-8 lg:p-16 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full bg-[#212629]">
-            <h1 class="text-4xl lg:text-6xl font-bold tracking-tight text-white">My</h1>
-			.hero-text .line {
-			width: calc(100% - 140px);
-			margin-left: auto;
-			height: 2px;
-			background: #fff;
-			margin-bottom: 28px;
-			}
-			<h1><p>Portfolio</p></h1>
+        <!-- Title with Custom Horizontal Line Next to "My" -->
+						<div class="space-y-1">
+							<div class="flex items-center space-x-4">
+								<h1 class="text-4xl lg:text-6xl font-bold tracking-tight text-white">My</h1>
+								<div class="flex-1 h-[2px] bg-white/40"></div>
+							</div>
+							<h1 class="text-4xl lg:text-6xl font-bold tracking-tight text-white">Portfolio</h1>
+						</div>
+
             <p class="text-gray-300 text-sm md:text-base font-medium tracking-wide">
                 Data Analyst | Database Administrator | UI/UX Designer
             </p>
