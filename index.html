@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- Google Fonts: Inter & Open Sans -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
-		<!-- Font Awesome (Diperbarui ke v6.5.2 agar ikon X / Twitter muncul) -->
+		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 		<!-- Tailwind CSS CDN -->
 		<script src="https://cdn.tailwindcss.com"></script>
@@ -54,18 +54,18 @@
 		<div id="wrapper" class="flex-1 flex flex-col h-full w-full relative overflow-hidden">
 
 			<!-- Header / Navbar -->
-			<header class="w-full px-8 py-4 flex items-center justify-between z-30 bg-[#1b1f22]/90 backdrop-blur-md border-b border-white/10">
+			<header class="w-full px-4 sm:px-8 py-4 flex items-center justify-between z-30 bg-[#1b1f22]/90 backdrop-blur-md border-b border-white/10">
 				<div class="text-xs font-semibold tracking-wide uppercase text-white font-inter">
 					Zahra Firdianti Zeny
 				</div>
 				<nav>
-					<ul class="flex items-center space-x-6 text-xs font-semibold">
-						<li><a href="#about" class="text-gray-300 hover:text-white transition-colors nav-link">Tentang</a></li>
-						<li><a href="#skill" class="text-gray-300 hover:text-white transition-colors nav-link">Keahlian</a></li>
-						<li><a href="#work" class="text-gray-300 hover:text-white transition-colors nav-link">Pengalaman</a></li>
-						<li><a href="#project" class="text-gray-300 hover:text-white transition-colors nav-link">Project</a></li>
-						<li><a href="#sertifikat" class="text-gray-300 hover:text-white transition-colors nav-link">Sertifikat</a></li>
-						<li><a href="#contact" class="text-gray-300 hover:text-white transition-colors nav-link">Kontak</a></li>
+					<ul class="flex items-center space-x-3 sm:space-x-6 text-xs font-semibold overflow-x-auto py-1">
+						<li><a href="#about" class="text-gray-300 hover:text-white transition-colors nav-link whitespace-nowrap">Tentang</a></li>
+						<li><a href="#skill" class="text-gray-300 hover:text-white transition-colors nav-link whitespace-nowrap">Keahlian</a></li>
+						<li><a href="#work" class="text-gray-300 hover:text-white transition-colors nav-link whitespace-nowrap">Pengalaman</a></li>
+						<li><a href="#project" class="text-gray-300 hover:text-white transition-colors nav-link whitespace-nowrap">Project</a></li>
+						<li><a href="#sertifikat" class="text-gray-300 hover:text-white transition-colors nav-link whitespace-nowrap">Sertifikat</a></li>
+						<li><a href="#contact" class="text-gray-300 hover:text-white transition-colors nav-link whitespace-nowrap">Kontak</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -75,28 +75,28 @@
 				<div class="w-full h-full grid grid-cols-1 lg:grid-cols-2 items-stretch bg-[#1b1f22]">
         
 					<!-- Left: Adjustable Image -->
-					<div class="h-full bg-[#1b1f22] flex flex-col items-center justify-center relative border-r border-white/10 overflow-hidden">
+					<div class="h-full bg-[#1b1f22] flex flex-col items-center justify-center relative border-r border-white/10 overflow-hidden min-h-[250px] lg:min-h-full">
 						<img src="images/pict02.jpg" alt="Profile Picture" class="absolute inset-0 w-full h-full object-cover opacity-90" id="main-profile-img" />
 					</div>
 
 					<!-- Right: Intro Content -->
-					<div class="p-8 lg:p-16 flex flex-col justify-center space-y-6 overflow-y-auto custom-scrollbar h-full bg-[#212629]">
+					<div class="p-6 sm:p-8 lg:p-16 flex flex-col justify-center space-y-6 h-full bg-[#212629] overflow-hidden">
 						<!-- Title with Custom Horizontal Line & Inter Font -->
-						<div class="space-y-1">
-							<div class="flex items-center space-x-4">
-								<h1 class="text-6xl lg:text-8xl font-bold tracking-tight text-white font-inter">My</h1>
-								<div class="flex-1 h-[3px] bg-white/50"></div>
+						<div class="space-y-1 relative">
+							<div class="flex items-center">
+								<h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white font-inter mr-4">My</h1>
+								<div class="h-[3px] bg-white/50 flex-1 -mr-6 sm:-mr-8 lg:-mr-16"></div>
 							</div>
-							<h1 class="text-6xl lg:text-8xl font-bold tracking-tight text-white font-inter">Portfolio</h1>
+							<h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white font-inter">Portfolio</h1>
 						</div>
 						<!-- Subtitle -->
-						<p class="text-gray-300 text-2xl md:text-3xl font-semibold tracking-wide font-sans">
+						<p class="text-gray-300 text-xl sm:text-2xl md:text-3xl font-semibold tracking-wide font-sans">
 							Data Analyst | Database Administrator | UI/UX Designer
 						</p>
-						<p class="text-gray-400 text-sm leading-relaxed font-sans">
+						<p class="text-gray-400 text-xs sm:text-sm leading-relaxed font-sans">
 							Saya percaya data terbaik lahir dari sistem yang rapi dan dipahami melalui desain yang manusiawi. Memadukan ketajaman analisis data, disiplin manajemen database, dan sense desain UI/UX untuk membantu bisnis mengambil keputusan yang tepat.
 						</p>
-						<div class="flex flex-wrap gap-4 pt-4">
+						<div class="flex flex-wrap gap-4 pt-2">
 							<a href="#project" class="nav-link px-6 py-3 bg-white text-black font-semibold uppercase text-xs tracking-widest rounded hover:bg-gray-200 transition-all text-center">
 								Lihat Project Saya
 							</a>
@@ -110,13 +110,18 @@
 			</main>
 
 			<!-- Sections / Modals Container -->
-			<div id="sections-container" class="fixed inset-0 bg-[#1b1f22]/95 z-50 hidden flex items-center justify-center p-6">
-				<div class="max-w-4xl w-full h-[85vh] bg-[#212629] border border-white/10 rounded-lg shadow-2xl overflow-y-auto custom-scrollbar p-8 relative">
-					<!-- Close Button -->
-					<button id="close-section" class="absolute top-6 right-6 text-gray-400 hover:text-white text-2xl focus:outline-none z-10">
-						<i class="fa-solid fa-xmark"></i>
-					</button>
-					<div id="section-content" class="mt-4"></div>
+			<div id="sections-container" class="fixed inset-0 bg-[#1b1f22]/95 z-50 hidden flex items-center justify-center p-4 sm:p-6">
+				<div class="max-w-4xl w-full h-[85vh] bg-[#212629] border border-white/10 rounded-lg shadow-2xl flex flex-col relative overflow-hidden">
+					<!-- Fixed Close Button (Sticky / Non-scrolling) -->
+					<div class="absolute top-0 right-0 p-6 z-20 bg-[#212629]/90 backdrop-blur-sm rounded-bl-lg">
+						<button id="close-section" class="text-gray-400 hover:text-white text-2xl focus:outline-none cursor-pointer">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</div>
+					<!-- Scrollable Content Area -->
+					<div class="flex-1 overflow-y-auto custom-scrollbar p-6 sm:p-8 pt-12">
+						<div id="section-content" class="mt-2"></div>
+					</div>
 				</div>
 			</div>
 
@@ -125,7 +130,7 @@
 		<!-- Image Lightbox Modal for Projects & Certificates -->
 		<div id="image-modal" class="fixed inset-0 bg-black/90 z-[60] hidden flex items-center justify-center p-4">
 			<div class="relative max-w-3xl max-h-[90vh]">
-				<button id="close-image-modal" class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300"><i class="fa-solid fa-xmark"></i></button>
+				<button id="close-image-modal" class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300 cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
 				<img id="modal-img-element" src="" alt="Zoomed Image" class="max-w-full max-h-[85vh] object-contain rounded border border-white/20" />
 			</div>
 		</div>
@@ -144,21 +149,23 @@
 						<p>Saat ini saya berfokus berkembang sebagai <b>Data Analyst</b>, dengan keahlian database sebagai fondasi kuat dan sense desain sebagai nilai tambah yang membedakan.</p>
 					</div>
 				</div>
-				<!-- Focus Card on the Right -->
-				<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
-					<div class="text-white/40 font-inter font-bold text-lg">01</div>
-					<h4 class="font-semibold text-white text-sm font-inter">🎯 Primary — Data Analyst</h4>
-					<p class="text-xs text-gray-400 font-sans leading-relaxed">Transformasi data menjadi insight bisnis yang actionable melalui SQL, Python, dan analisis statistik.</p>
-				</div>
-				<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
-					<div class="text-white/40 font-inter font-bold text-lg">02</div>
-					<h4 class="font-semibold text-white text-sm font-inter">🗄 Secondary — Database Administrator</h4>
-					<p class="text-xs text-gray-400 font-sans leading-relaxed">Pengalaman nyata mengelola, mengarsipkan, dan menjaga integritas data perusahaan dengan standar tinggi.</p>
-				</div>
-				<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
-					<div class="text-white/40 font-inter font-bold text-lg">03</div>
-					<h4 class="font-semibold text-white text-sm font-inter">🎨 Tertiary — UI/UX Designer</h4>
-					<p class="text-xs text-gray-400 font-sans leading-relaxed">Merancang pengalaman digital yang intuitif &mdash; dari riset; wireframe, hingga prototype di Figma.</p>
+				<!-- Focus Cards Aligned Vertically (Stacked Downwards) -->
+				<div class="md:col-span-1 flex flex-col space-y-4">
+					<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
+						<div class="text-white/40 font-inter font-bold text-lg">01</div>
+						<h4 class="font-semibold text-white text-sm font-inter">🎯 Primary — Data Analyst</h4>
+						<p class="text-xs text-gray-400 font-sans leading-relaxed">Transformasi data menjadi insight bisnis yang actionable melalui SQL, Python, dan analisis statistik.</p>
+					</div>
+					<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
+						<div class="text-white/40 font-inter font-bold text-lg">02</div>
+						<h4 class="font-semibold text-white text-sm font-inter">🗄 Secondary — Database Administrator</h4>
+						<p class="text-xs text-gray-400 font-sans leading-relaxed">Pengalaman nyata mengelola, mengarsipkan, dan menjaga integritas data perusahaan dengan standar tinggi.</p>
+					</div>
+					<div class="bg-[#1b1f22] p-5 rounded-lg border border-white/10 shadow-md flex flex-col justify-center space-y-2">
+						<div class="text-white/40 font-inter font-bold text-lg">03</div>
+						<h4 class="font-semibold text-white text-sm font-inter">🎨 Tertiary — UI/UX Designer</h4>
+						<p class="text-xs text-gray-400 font-sans leading-relaxed">Merancang pengalaman digital yang intuitif &mdash; dari riset; wireframe, hingga prototype di Figma.</p>
+					</div>
 				</div>
 			</div>
 		</template>
@@ -215,29 +222,51 @@
 		</template>
 
 		<template id="work-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Work Experience</h2>
+			<h2 class="text-2xl sm:text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Work Experience</h2>
 			<div class="space-y-6 text-gray-300 text-sm">
 				<div class="bg-[#1b1f22] p-6 rounded border border-white/5">
-					<div class="flex justify-between items-center mb-2">
-						<h3 class="text-lg font-semibold text-white font-inter">IT Consultant & Database Assistant</h3>
-						<span class="text-xs text-gray-400">2025 - Present</span>
+					<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-1">
+						<h3 class="text-lg font-semibold text-white font-inter">Magang Administrasi</h3>
+						<span class="text-xs text-gray-400">Oktober 2025 - Januari 2026</span>
 					</div>
-					<p class="text-gray-400 mb-2">PT. Lepkom Mandiri</p>
-					<p class="text-xs">Involved in database configuration, SQL Server implementations, and technical documentation for enterprise systems.</p>
+					<p class="text-gray-400 mb-3 text-xs sm:text-sm font-semibold">SANTORO Energy</p>
+					<ul class="list-disc list-inside space-y-1 text-xs text-gray-300 leading-relaxed">
+						<li>Mengelola pengarsipan dokumen digital dan memastikan data perusahaan terstruktur dan mudah diakses.</li>
+						<li>Melakukan input data serta pengetikan dokumen dengan akurasi tinggi untuk kebutuhan operasional.</li>
+						<li>Mendistribusikan file internal dan berkoordinasi dengan tim kecil dalam kondisi perusahaan yang sedang bertransformasi.</li>
+						<li>Memperbarui catatan klien secara rutin untuk menjaga kelengkapan dan keakuratan informasi.</li>
+					</ul>
 				</div>
 				<div class="bg-[#1b1f22] p-6 rounded border border-white/5">
-					<div class="flex justify-between items-center mb-2">
-						<h3 class="text-lg font-semibold text-white font-inter">UI/UX & Research Intern</h3>
-						<span class="text-xs text-gray-400">2024 - 2025</span>
+					<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-1">
+						<h3 class="text-lg font-semibold text-white font-inter">Tutor Bahasa Inggris</h3>
+						<span class="text-xs text-gray-400">September 2022 - Maret 2023</span>
 					</div>
-					<p class="text-gray-400 mb-2">Freelance / Academic Projects</p>
-					<p class="text-xs">Conducted user experience evaluations using standardized frameworks (UEQ) and created intuitive wireframes and prototypes in Figma.</p>
+					<p class="text-gray-400 mb-3 text-xs sm:text-sm font-semibold">Genza Education</p>
+					<ul class="list-disc list-inside space-y-1 text-xs text-gray-300 leading-relaxed">
+						<li>Menyusun materi pembelajaran terstruktur sesuai kebutuhan siswa.</li>
+						<li>Mendesain kuis dan latihan interaktif untuk meningkatkan keterlibatan belajar.</li>
+						<li>Berkomunikasi aktif dengan siswa dan orang tua untuk menyelaraskan tujuan pembelajaran.</li>
+					</ul>
+				</div>
+				<div class="bg-[#1b1f22] p-6 rounded border border-white/5">
+					<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-1">
+						<h3 class="text-lg font-semibold text-white font-inter">Staf Operasional</h3>
+						<span class="text-xs text-gray-400">April 2019 - November 2022</span>
+					</div>
+					<p class="text-gray-400 mb-3 text-xs sm:text-sm font-semibold">Toko Fotokopi & Alat Tulis</p>
+					<ul class="list-disc list-inside space-y-1 text-xs text-gray-300 leading-relaxed">
+						<li>Melayani pelanggan dengan ramah dan profesional untuk memenuhi kebutuhan dokumen.</li>
+						<li>Mengoperasikan mesin fotokopi dan peralatan pendukung untuk menghasilkan dokumen berkualitas.</li>
+						<li>Mengelola transaksi pembayaran harian dan memastikan setiap pesanan selesai tepat waktu.</li>
+						<li>Menjaga kerapian ruang kerja serta ketersediaan peralatan operasional.</li>
+					</ul>
 				</div>
 			</div>
 		</template>
 
 		<template id="project-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Project Pilihan</h2>
+			<h2 class="text-2xl sm:text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Project Pilihan</h2>
 			<p class="text-gray-300 text-sm mb-6">Hasil karya desain UI/UX dan visual - tempat data bertemu estetika. Klik pada gambar untuk melihat lebih jelas.</p>
 			
 			<div class="space-y-8">
@@ -292,7 +321,7 @@
 		</template>
 
 		<template id="sertifikat-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Sertifikasi & Pelatihan</h2>
+			<h2 class="text-2xl sm:text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Sertifikasi & Pelatihan</h2>
 			<p class="text-gray-300 text-sm mb-6">Komitmen berkelanjutan untuk terus belajar dan berkembang. Klik gambar untuk memperbesar.</p>			
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<!-- Sertifikat 1 -->
@@ -353,7 +382,7 @@
 		</template>
 
 		<template id="contact-template">
-			<h2 class="text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Contact Me</h2>
+			<h2 class="text-2xl sm:text-3xl font-bold border-b border-white/10 pb-4 mb-6 uppercase tracking-wider font-inter">Contact Me</h2>
 			<form method="post" action="#" class="space-y-4">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
@@ -375,7 +404,7 @@
 				</div>
 			</form>
 			
-			<!-- Social/Contact Icons -->
+			<!-- Social/Contact Icons with direct Mailto Email -->
 			<ul class="flex space-x-6 mt-8 text-xl">
 				<li><a href="https://www.instagram.com/hwahzzny" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
 				<li><a href="https://x.com/z_fzeny" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="X"><i class="fa-brands fa-x-twitter"></i></a></li>
